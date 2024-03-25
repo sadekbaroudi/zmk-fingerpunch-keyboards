@@ -1,6 +1,6 @@
 build:
-  depends:
-    - vik-core
-    - fingerpunch-controllers
+  # depends:
+  #   - vik-core
+  #   - fingerpunch-controllers
   settings:
     board_root: .
