@@ -1,9 +1,8 @@
-# This file generates the GitHub Actions matrix.
-# For simple board + shield combinations, add them to the top level board and
-# shield arrays, for more control, add individual board + shield combinations
-# to the `include` property. You can also use the `cmake-args` property to
-# pass flags to the build command and `artifact-name` to assign a name to
-# distinguish build outputs from each other:
+# This file generates the GitHub Actions matrix
+# For simple board + shield combinations, add them
+# to the top level board and shield arrays, for more
+# control, add individual board + shield combinations to
+# the `include` property, e.g:
 #
 # board: [ "nice_nano_v2" ]
 # shield: [ "corne_left", "corne_right" ]
@@ -11,9 +10,34 @@
 #   - board: bdn9_rev2
 #   - board: nice_nano_v2
 #     shield: reviung41
-#   - board: nice_nano_v2
-#     shield: corne_left
-#     cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
-#     artifact-name: corne_left_with_logging
 #
 ---
+include:
+  # - board: seeeduino_xiao_ble
+  #   shield: arachnophobe
+  # - board: nice_nano_v2
+  #   shield: barobord
+  # - board: nice_nano_v2
+  #   shield: duet_sxmy
+  # - board: nice_nano_v2
+  #   shield: ffkb_holyiot
+  # - board: nice_nano_v2
+  #   shield: ffkb_v1
+  # - board: nice_nano_v2
+  #   shield: ffkb_v2
+  # - board: nice_nano_v2
+  #   shield: ffkb_v3
+  # - board: nice_nano_v2
+  #   shield: ffkb_lite_v1
+  # - board: nice_nano_v2
+  #   shield: pinkies_out_v1
+  # - board: nice_nano_v2
+  #   shield: pinkies_out_v2
+  # - board: nice_nano_v2
+  #   shield: rock_on_v1
+  # - board: nice_nano_v2
+  #   shield: swweeep_left nice_view_adapter  nice_view
+  # - board: nice_nano_v2
+  #   shield: swweeep_right nice_view_adapter nice_view
+  - board: vikoto
+    shield: ffkb_lite_v1
