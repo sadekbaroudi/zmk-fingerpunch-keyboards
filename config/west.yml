@@ -21,11 +21,9 @@ manifest:
     - name: zmk-fingerpunch-vik
       remote: sadekbaroudi
       revision: main
-      import: app/west.yml
     - name: zmk-fingerpunch-controllers
       remote: sadekbaroudi
       revision: main
-      import: app/west.yml
     # - name: zmk
     #   remote: petejohanson
     #   revision: feat/pointers-move-scroll
