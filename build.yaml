@@ -41,3 +41,5 @@ include:
   #   shield: swweeep_right nice_view_adapter nice_view
   - board: vikoto
     shield: ffkb_lite_v1
+#     cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
+#     artifact-name: ffkb_lite_v1_with_logging

@@ -10,9 +10,15 @@ manifest:
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: main
+      remote: petejohanson
+      revision: feat/pointers-move-scroll
       import: app/west.yml
+    # replace the one above with the commented one below when it gets merged into zmk
+    # must swap the zmk-fingerpunch-keyboards repo as well at the same time
+    # - name: zmk
+    #   remote: zmkfirmware
+    #   revision: main
+    #   import: app/west.yml
     # only needed if overriding keymaps, at least until this gets merged into main
     # - name: zmk
     #   remote: petejohanson
@@ -24,12 +30,5 @@ manifest:
     - name: zmk-fingerpunch-controllers
       remote: sadekbaroudi
       revision: main
-    # - name: zmk
-    #   remote: petejohanson
-    #   revision: feat/pointers-move-scroll
-    #   import: app/west.yml
-    # - name: cirque-input-module
-    #   remote: petejohanson
-    #   revision: main
   self:
     path: config
