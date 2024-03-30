@@ -1,0 +1,8 @@
+file_format: "1"
+id: arachnophobe
+name: arachnophobe
+type: shield
+url: https://github.com/sadekbaroudi/arachnophobe
+requires: [seeed_xiao]
+features:
+  - keys

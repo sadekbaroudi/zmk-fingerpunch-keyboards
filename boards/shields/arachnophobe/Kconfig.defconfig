@@ -1,0 +1,16 @@
+# Copyright (c) 2020 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_ARACHNOPHOBE
+
+config ZMK_KEYBOARD_NAME
+    default "arachnophobe"
+
+if ZMK_BACKLIGHT
+
+config LED_GPIO
+    default y
+
+endif # ZMK_BACKLIGHT
+
+endif
