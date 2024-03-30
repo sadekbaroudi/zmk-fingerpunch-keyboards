@@ -43,5 +43,13 @@ include:
     shield: ffkb_lite_v1 vik_cirque_i2c
   - board: vikoto
     shield: ffkb_lite_v1 vik_cirque_spi
+  - board: sadekbaroudi_svlinky
+    shield: ffkb_lite_v1 vik_cirque_i2c
+  - board: sadekbaroudi_svlinky
+    shield: ffkb_lite_v1 vik_cirque_spi
+  - board: sadekbaroudi_xivik
+    shield: ffkb_lite_v1 vik_cirque_i2c
+  - board: sadekbaroudi_xivik
+    shield: ffkb_lite_v1 vik_cirque_spi
 #     cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
 #     artifact-name: ffkb_lite_v1_with_logging
