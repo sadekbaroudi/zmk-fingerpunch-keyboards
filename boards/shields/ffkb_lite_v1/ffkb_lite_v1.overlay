@@ -59,37 +59,6 @@
     };
 };
 
-// spi config
-/**
-&vik_spi {
-    status = "okay";
-    cs-gpios = <&vik_conn 6 GPIO_ACTIVE_LOW>;
-    glidepoint: glidepoint@0 {
-        compatible = "cirque,pinnacle";
-        reg = <0>;
-        spi-max-frequency = <1000000>;
-        status = "okay";
-        dr-gpios = <&vik_conn 5 (GPIO_ACTIVE_HIGH)>; // DR pin on cirque is always &vik_conn 5
-
-        sensitivity = "4x";
-        sleep;
-        no-taps;
-    };
-};
-
-// after switching to latest version of pete's pointing code, remove input_config in the two spots above and add this
-/ {
-    glidepoint_input {
-        compatible = "zmk,input-listener";
-        device = <&glidepoint>;
-
-        xy-swap;
-        y-invert;
-        x-invert;
-    };
-};
-*/
-
 // for logging, if needed
 &usbd {
     status = "okay";
