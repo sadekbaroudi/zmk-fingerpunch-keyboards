@@ -27,8 +27,10 @@ manifest:
     - name: zmk-fingerpunch-vik
       remote: sadekbaroudi
       revision: main
+      import: config/west.yml
     - name: zmk-fingerpunch-controllers
       remote: sadekbaroudi
       revision: main
+      import: config/west.yml
   self:
     path: config
