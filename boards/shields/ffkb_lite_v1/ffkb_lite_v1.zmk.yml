@@ -4,7 +4,5 @@ name: ffkb_lite_v1
 type: shield
 url: https://github.com/sadekbaroudi/ffkb/
 requires: [pro_micro]
-exposes:
-  - i2c_glidepoint
 features:
   - keys
