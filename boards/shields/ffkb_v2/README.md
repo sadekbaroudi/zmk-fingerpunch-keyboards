@@ -1,0 +1,3 @@
+# ffkb v2
+
+While I am providing the firmware for ZMK, this pcb has an LDO that does impact battery life. The LDO (4 pin IC, labeled as U2) is only necessary if you're running on a 5V controller. Given wireless controllers run 3.3V, you can de-solder the LDO to maximize battery life. After removing the LDO, you should short the 5V and 3.3V through holes on the PCB. This will retain the exact same functionality of the PCB.
