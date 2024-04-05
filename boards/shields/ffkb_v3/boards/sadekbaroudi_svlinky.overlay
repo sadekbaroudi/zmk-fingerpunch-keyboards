@@ -1,0 +1,33 @@
+&pinctrl {
+    spi0_default: spi0_default {
+		group1 {
+			pinmux = <SPI0_TX_P23>;
+		};
+		group2 {
+			pinmux = <SPI0_RX_P20>;
+			input-enable;
+		};
+		group3 {
+			pinmux = <SPI0_SCK_P22>;
+		};
+    };
+};
+
+&spi0 {
+    /* Cannot be used together with i2c0. */
+    status = "okay";
+    cs-gpios = <&pro_micro 10 GPIO_ACTIVE_LOW>;
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-names = "default";
+    clock-frequency = <DT_FREQ_M(2)>;
+
+    shift_reg: 595@0 {
+        compatible = "zmk,gpio-595";
+        status = "okay";
+        gpio-controller;
+        spi-max-frequency = <200000>;
+        reg = <0>;
+        #gpio-cells = <2>;
+        ngpios = <8>;
+    };
+};

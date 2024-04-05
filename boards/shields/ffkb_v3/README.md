@@ -1,0 +1,3 @@
+# ffkb v3
+
+While I am providing the firmware for ZMK, I generally don't recommend running this PCB wireless. If you do decide to do so, please note that the components selected for this PCB do not consider battery consumption, so the power draw is relatively high. The recommendation would be to use a larger battery for this. Generally, the common battery capacity is about 100-200 mAh. I'd suggest something closer to 800 mAh or more.

@@ -49,10 +49,18 @@ include:
     shield: ffkb_v2 vik_cirque_i2c
   - board: sadekbaroudi_svlinky
     shield: ffkb_v2 vik_cirque_spi
-  # - board: nice_nano_v2
-  #   shield: ffkb_v3
-  # - board: nice_nano_v2
-  #   shield: ffkb_lite_v1
+  - board: nice_nano_v2
+    shield: ffkb_v3
+  - board: vikoto
+    shield: ffkb_v3
+  - board: vikoto
+    shield: ffkb_v3 vik_cirque_i2c
+  - board: vikoto
+    shield: ffkb_v3 vik_cirque_spi
+  - board: sadekbaroudi_svlinky
+    shield: ffkb_v3 vik_cirque_i2c
+  - board: sadekbaroudi_svlinky
+    shield: ffkb_v3 vik_cirque_spi
   # - board: nice_nano_v2
   #   shield: pinkies_out_v1
   # - board: nice_nano_v2
