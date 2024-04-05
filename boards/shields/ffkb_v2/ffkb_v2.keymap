@@ -28,7 +28,7 @@
         compatible = "zmk,combos";
         combo_undo {
             timeout-ms = <50>;
-            key-positions = <26 27>;
+            key-positions = <25 26>;
             bindings = <&kp LC(Z)>;
         };
     };
