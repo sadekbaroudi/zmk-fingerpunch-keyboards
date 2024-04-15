@@ -1,0 +1,8 @@
+file_format: "1"
+id: pinkiesout_v1
+name: pinkiesout_v1
+type: shield
+url: https://github.com/sadekbaroudi/pinkies-out/
+requires: [pro_micro]
+features:
+  - keys
