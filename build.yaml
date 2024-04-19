@@ -97,3 +97,9 @@ include:
     shield: pinkiesout_v1
   - board: nice_nano_v2
     shield: rockon_v1
+  - board: nice_nano_v2
+    shield: swweeep_left nice_view_adapter nice_view
+  - board: nice_nano_v2
+    shield: swweeep_right nice_view_adapter nice_view
+  - board: nice_nano_v2
+    shield: settings_reset

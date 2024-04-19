@@ -1,0 +1,11 @@
+file_format: "1"
+id: swweeep
+name: swweeep
+type: shield
+url: https://github.com/sadekbaroudi/sweep36
+requires: [pro_micro]
+features:
+  - keys
+siblings:
+  - swweeep_left
+  - swweeep_right
