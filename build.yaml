@@ -102,4 +102,12 @@ include:
   - board: nice_nano_v2
     shield: swweeep_right nice_view_adapter nice_view
   - board: nice_nano_v2
+    shield: vulpes_minora_left
+  - board: nice_nano_v2
+    shield: vulpes_minora_right
+  - board: nice_nano_v2
+    shield: vulpes_minora_left vik_cirque_spi
+  - board: nice_nano_v2
+    shield: vulpes_minora_left vik_pmw3610
+  - board: nice_nano_v2
     shield: settings_reset

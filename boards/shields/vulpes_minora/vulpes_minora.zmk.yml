@@ -1,0 +1,11 @@
+file_format: "1"
+id: vulpes_minora
+name: Vulpes Minora
+type: shield
+url: https://github.com/sadekbaroudi/vulpes-minora
+requires: [pro_micro]
+features:
+  - keys
+siblings:
+  - vulpes_minora_left
+  - vulpes_minora_right

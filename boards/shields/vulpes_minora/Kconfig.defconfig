@@ -1,0 +1,19 @@
+# Copyright (c) 2022 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_VULPES_MINORA_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "vulpes minora"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_VULPES_MINORA_LEFT || SHIELD_VULPES_MINORA_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
