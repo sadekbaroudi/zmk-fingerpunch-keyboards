@@ -22,6 +22,7 @@
 
 ///////// VIK SPI and connector start
 &spi0 {
+    // need to remove everything here except cs-gpios after https://github.com/zmkfirmware/zmk/pull/2280 is merged
     compatible = "nordic,nrf-spim";
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
@@ -29,6 +30,7 @@
     cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
 };
 
+// need to change to spi2, spi2_vik_pmw3610_default, spi2_vik_pmw3610_sleep after https://github.com/zmkfirmware/zmk/pull/2280 is merged
 &spi1 {
     compatible = "nordic,nrf-spim";
     pinctrl-0 = <&spi1_vik_pmw3610_default>;
@@ -43,27 +45,28 @@
 		gpio-map-mask = <0xffffffff 0xffffffc0>;
 		gpio-map-pass-thru = <0 0x3f>;
 		gpio-map
-			= <0 0 &pro_micro 2 0>	   /* vik SDA */
-			, <1 0 &pro_micro 3 0>	   /* vik SCL */
-			, <2 0 &pro_micro 1 0>	   /* vik RGB Data */
-			, <3 0 &gpio1  7 0>		   /* vik AD_1 */
-			, <4 0 &pro_micro 16 0>	   /* vik MOSI */
-			, <5 0 &pro_micro 18 0>	   /* vik AD_2 */
-			, <6 0 &pro_micro 10 0>	   /* vik CS */
-			, <7 0 &pro_micro 14 0>	   /* vik MISO */
-			, <8 0 &pro_micro 15 0>	   /* vik SCLK */
+			= <0 0 &gpio0  17 0>    /* vik SDA */
+			, <1 0 &gpio0  20 0>    /* vik SCL */
+			, <2 0 &gpio0  6 0>     /* vik RGB Data */
+			, <3 0 &gpio1  7 0>     /* vik AD_1 */
+			, <4 0 &gpio0  10 0>    /* vik MOSI */
+			, <5 0 &gpio1  15 0>    /* vik AD_2 */
+			, <6 0 &gpio0  9 0>     /* vik CS */
+			, <7 0 &gpio1  11 0>    /* vik MISO */
+			, <8 0 &gpio1  13 0>    /* vik SCLK */
 			;
 	};
 };
 
 // Note: vulpes minora uses pro micro pin compatible i2c and spi
 vik_i2c: &pro_micro_i2c {}; // i2c0
-vik_spi: &pro_micro_spi {}; // spi0
-vik_spi_pmw3610: &spi1 {};
+vik_spi: &pro_micro_spi {}; // spi0 - will change to spi1 after https://github.com/zmkfirmware/zmk/pull/2280 is merged
+vik_spi_pmw3610: &spi1 {}; // need to change to spi2 after https://github.com/zmkfirmware/zmk/pull/2280 is merged
 ///////// VIK SPI and connector end
 
 &pinctrl {
     // VIK SPI pinctrl start
+    // can remove spi0_default and spi0_sleep after https://github.com/zmkfirmware/zmk/pull/2280 is merged
     spi0_default: spi0_default {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
@@ -81,6 +84,7 @@ vik_spi_pmw3610: &spi1 {};
         };
     };
 
+    // need to change to spi2_vik_pmw3610_default after https://github.com/zmkfirmware/zmk/pull/2280 is merged
     spi1_vik_pmw3610_default: spi1_vik_pmw3610_default {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
@@ -89,6 +93,7 @@ vik_spi_pmw3610: &spi1 {};
         };
     };
 
+    // need to change to spi2_vik_pmw3610_sleep after https://github.com/zmkfirmware/zmk/pull/2280 is merged
     spi1_vik_pmw3610_sleep: spi1_vik_pmw3610_sleep {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
