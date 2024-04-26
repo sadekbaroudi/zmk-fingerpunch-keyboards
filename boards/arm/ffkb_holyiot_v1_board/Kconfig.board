@@ -1,0 +1,8 @@
+# Zaphod board configuration
+
+# Copyright (c) 2020 Pete Johanson
+# SPDX-License-Identifier: MIT
+
+config BOARD_FFKB_HOLYIOT_V1_BOARD
+	bool "ffkb_holyiot_v1_board"
+	depends on SOC_NRF52840_QIAA
