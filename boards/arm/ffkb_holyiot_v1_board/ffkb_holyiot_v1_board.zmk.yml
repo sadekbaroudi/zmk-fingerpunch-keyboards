@@ -1,0 +1,9 @@
+file_format: "1"
+id: ffkb_holyiot_v1_board
+name: ffkb holyiot v1 board
+type: board
+arch: arm
+outputs:
+  - usb
+url: https://github.com/sadekbaroudi/ffkb
+
