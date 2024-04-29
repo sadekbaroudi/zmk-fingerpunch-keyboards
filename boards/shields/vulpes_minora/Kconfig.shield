@@ -5,4 +5,4 @@ config SHIELD_VULPES_MINORA_LEFT
     def_bool $(shields_list_contains,vulpes_minora_left)
 
 config SHIELD_VULPES_MINORA_RIGHT
-    def_bool $(shields_list_contains,vulepes_minora_right)
+    def_bool $(shields_list_contains,vulpes_minora_right)
