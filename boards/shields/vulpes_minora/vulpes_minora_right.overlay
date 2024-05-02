@@ -19,3 +19,10 @@
         , <&pro_micro 5 GPIO_ACTIVE_HIGH>
         ;
 };
+
+// Override default orientation for vulpes minora right half cirque case
+/ {
+    glidepoint_input {
+        y-invert;
+    };
+};
