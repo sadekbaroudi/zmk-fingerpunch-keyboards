@@ -19,18 +19,6 @@ manifest:
     #   remote: zmkfirmware
     #   revision: main
     #   import: app/west.yml
-    # only needed if overriding keymaps, at least until this gets merged into main
-    # - name: zmk
-    #   remote: petejohanson
-    #   revision: build/zephyr-module-keymap-loading-refactor
-    #   import: app/west.yml
-    - name: zmk-fingerpunch-vik
-      remote: sadekbaroudi
-      revision: main
-      import: config/west.yml
-    - name: zmk-fingerpunch-controllers
-      remote: sadekbaroudi
-      revision: main
-      import: config/west.yml
   self:
     path: config
+    import: deps.yml
