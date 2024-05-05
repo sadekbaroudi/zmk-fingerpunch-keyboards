@@ -15,9 +15,17 @@
 include:
   - board: seeeduino_xiao_ble
     shield: arachnophobe
-  - board: sadekbaroudi_xivik
+  - board: xivik@0.1.0
     shield: arachnophobe vik_cirque_i2c
-  - board: sadekbaroudi_xivik
+  - board: xivik@0.1.0
+    shield: arachnophobe vik_cirque_spi
+  - board: xivik@0.2.0
+    shield: arachnophobe vik_cirque_i2c
+  - board: xivik@0.2.0
+    shield: arachnophobe vik_cirque_spi
+  - board: xivik@0.3.0
+    shield: arachnophobe vik_cirque_i2c
+  - board: xivik@0.3.0
     shield: arachnophobe vik_cirque_spi
   # - board: nice_nano_v2
   #   shield: barobord
@@ -35,9 +43,9 @@ include:
     shield: ffkb_v1 vik_cirque_spi
   - board: vikoto
     shield: ffkb_v1 vik_pmw3610
-  - board: sadekbaroudi_svlinky
+  - board: svlinky@0.2.0
     shield: ffkb_v1 vik_cirque_i2c
-  - board: sadekbaroudi_svlinky
+  - board: svlinky@0.2.0
     shield: ffkb_v1 vik_cirque_spi
   - board: nice_nano_v2
     shield: ffkb_v2
@@ -49,9 +57,9 @@ include:
     shield: ffkb_v2 vik_cirque_spi
   - board: vikoto
     shield: ffkb_v2 vik_pmw3610
-  - board: sadekbaroudi_svlinky
+  - board: svlinky@0.2.0
     shield: ffkb_v2 vik_cirque_i2c
-  - board: sadekbaroudi_svlinky
+  - board: svlinky@0.2.0
     shield: ffkb_v2 vik_cirque_spi
   - board: nice_nano_v2
     shield: ffkb_v3
@@ -63,9 +71,9 @@ include:
     shield: ffkb_v3 vik_cirque_spi
   - board: vikoto
     shield: ffkb_v3 vik_pmw3610
-  - board: sadekbaroudi_svlinky
+  - board: svlinky@0.2.0
     shield: ffkb_v3 vik_cirque_i2c
-  - board: sadekbaroudi_svlinky
+  - board: svlinky@0.2.0
     shield: ffkb_v3 vik_cirque_spi
   # - board: nice_nano_v2
   #   shield: pinkies_out_v1
@@ -89,9 +97,13 @@ include:
     shield: ffkb_lite_v1 vik_cirque_spi
   - board: vikoto
     shield: ffkb_lite_v1 vik_pmw3610
-  - board: sadekbaroudi_svlinky
+  - board: svlinky@0.1.0
     shield: ffkb_lite_v1 vik_cirque_i2c
-  - board: sadekbaroudi_svlinky
+  - board: svlinky@0.1.0
+    shield: ffkb_lite_v1 vik_cirque_spi
+  - board: svlinky@0.2.0
+    shield: ffkb_lite_v1 vik_cirque_i2c
+  - board: svlinky@0.2.0
     shield: ffkb_lite_v1 vik_cirque_spi
 #     cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
 #     artifact-name: ffkb_lite_v1_with_logging
