@@ -123,5 +123,15 @@ include:
     shield: vulpes_minora_right vik_cirque_spi
   - board: nice_nano_v2
     shield: vulpes_minora_right vik_pmw3610
+  - board: xivik@0.2.0
+    shield: vik_vikropad
+  - board: xivik@0.3.0
+    shield: vik_vikropad
+  - board: svlinky@0.1.0
+    shield: vik_vikropad
+  - board: svlinky@0.2.0
+    shield: vik_vikropad
+  - board: vikoto
+    shield: vik_vikropad
   - board: nice_nano_v2
     shield: settings_reset
