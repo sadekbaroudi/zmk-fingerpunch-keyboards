@@ -1,0 +1,8 @@
+file_format: "1"
+id: helmet_head
+name: helmet_head
+type: shield
+url: https://github.com/sadekbaroudi/fingerpunch/tree/master/3d-models/trackball-thumb-helmet
+requires: [pro_micro]
+features:
+  - keys
