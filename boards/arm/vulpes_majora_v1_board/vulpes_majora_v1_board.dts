@@ -74,6 +74,12 @@
 					RC(7,3)                                                                                             RC(8,3)
         >;
     };
+
+    // chiptuner0: chiptuner0 {
+    //     status = "okay";
+    //     // PWM pulled from https://docs.zephyrproject.org/apidoc/3.5.0/rpi-pico-rp2040-pinctrl_8h.html
+    //     pwms = <&pwm_ch1a_default>;
+    // };
 };
 
 #define VULPES_MAJORA_V1_BOARD_FLASH_SIZE_M 4
@@ -147,6 +153,13 @@
 	pinctrl-0 = <&i2c1_default>;
 	pinctrl-names = "default";
 	clock-frequency = <I2C_BITRATE_FAST>;
+};
+
+// for audio buzzer
+&pwm {
+	pinctrl-0 = <&pwm_ch1a_default>;
+	pinctrl-names = "default";
+	divider-int-0 = <255>;
 };
 
 &gpio0 {

@@ -52,4 +52,11 @@
 			input-schmitt-enable;
 		};
 	};
+
+	// for audio buzzer
+	pwm_ch1a_default: pwm_ch1a_default {
+		group1 {
+			pinmux = <PWM_1A_P18>;
+		};
+	};
 };

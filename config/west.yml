@@ -13,6 +13,9 @@ manifest:
       remote: petejohanson
       revision: feat/pointers-move-scroll
       import: app/west.yml
+    - name: chiptuner-zmk-module
+      remote: petejohanson
+      revision: main
     # replace the one above with the commented one below when it gets merged into zmk
     # must swap the zmk-fingerpunch-keyboards repo as well at the same time
     # - name: zmk
