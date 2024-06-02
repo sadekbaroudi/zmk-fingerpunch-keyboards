@@ -158,6 +158,7 @@
 
 // for audio buzzer
 &pwm {
+    status = "okay";
     pinctrl-0 = <&pwm_ch1a_default>;
     pinctrl-names = "default";
     divider-int-0 = <255>;
