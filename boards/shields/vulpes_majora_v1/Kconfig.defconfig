@@ -1,9 +1,0 @@
-# Copyright (c) 2021 The ZMK Contributors
-# SPDX-License-Identifier: MIT
-
-if SHIELD_VULPES_MAJORA_V1
-
-config ZMK_KEYBOARD_NAME
-    default "vulpes majora v1"
-
-endif

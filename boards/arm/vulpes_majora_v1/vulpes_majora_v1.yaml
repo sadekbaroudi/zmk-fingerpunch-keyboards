@@ -1,5 +1,5 @@
-identifier: vulpes_majora_v1_board
-name: vulpes_majora_v1_board
+identifier: vulpes_majora_v1
+name: vulpes_majora_v1
 type: mcu
 arch: arm
 flash: 8092

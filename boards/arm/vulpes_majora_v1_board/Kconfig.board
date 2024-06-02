@@ -1,6 +1,0 @@
-# Copyright (c) 2024, Sadek Baroudi
-# SPDX-License-Identifier: MIT
-
-config BOARD_VULPES_MAJORA_V1_BOARD
-	bool "vulpes_majora_v1_board"
-	depends on SOC_RP2040

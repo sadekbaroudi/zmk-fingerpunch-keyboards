@@ -1,0 +1,62 @@
+/*
+ * Copyright (c) 2024, Sadek Baroudi
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <dt-bindings/pinctrl/rpi-pico-rp2040-pinctrl.h>
+
+&pinctrl {
+    uart0_default: uart0_default {
+        group1 {
+            pinmux = <UART0_TX_P0>;
+        };
+        group2 {
+            pinmux = <UART0_RX_P1>;
+            input-enable;
+        };
+    };
+
+    // vik spi pinout
+    spi0_default: spi0_default {
+        group1 {
+            pinmux = <SPI0_TX_P23>;
+        };
+        group2 {
+            pinmux = <SPI0_RX_P20>;
+            input-enable;
+        };
+        group3 {
+            pinmux = <SPI0_SCK_P22>;
+        };
+    };
+
+    // led spi pinout
+    spi1_default: spi1_default {
+        group1 {
+            pinmux = <SPI1_TX_P11>;
+        };
+        group2 {
+            pinmux = <SPI1_RX_P12>;
+            input-enable;
+        };
+        group3 {
+            pinmux = <SPI1_SCK_P14>;
+        };
+    };
+    
+    // vik i2c pinout
+    i2c1_default: i2c1_default {
+        group1 {
+            pinmux = <I2C1_SDA_P2>, <I2C1_SCL_P3>;
+            input-enable;
+            input-schmitt-enable;
+        };
+    };
+
+	// for audio buzzer
+	pwm_ch1a_default: pwm_ch1a_default {
+		group1 {
+			pinmux = <PWM_1A_P18>;
+		};
+	};
+};

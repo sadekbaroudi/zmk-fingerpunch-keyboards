@@ -6,15 +6,15 @@
 /dts-v1/;
 
 #include <rpi_pico/rp2040.dtsi>
-#include "vulpes_majora_v1_board-pinctl.dtsi"
+#include "vulpes_majora_v1-pinctl.dtsi"
 #include "vik_connector.dtsi"
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <dt-bindings/led/led.h>
 #include <freq.h>
 
 / {
-    model = "vulpes_majora_v1_board";
-    compatible = "vulpes_majora_v1_board", "raspberrypi,rp2040";
+    model = "vulpes_majora_v1";
+    compatible = "vulpes_majora_v1", "raspberrypi,rp2040";
 
     chosen {
         zephyr,sram = &sram0;
@@ -24,6 +24,8 @@
         zmk,matrix_transform = &default_transform;
         zmk,kscan = &kscan0;
         zmk,underglow = &led_strip;
+        // for logging, if needed
+        zephyr,console = &cdc_acm_uart;
     };
 
     xtal_clk: xtal-clk {
@@ -75,21 +77,15 @@
                     RC(7,3)                                                                                             RC(8,3)
         >;
     };
-
-    // chiptuner0: chiptuner0 {
-    //     status = "okay";
-    //     // PWM pulled from https://docs.zephyrproject.org/apidoc/3.5.0/rpi-pico-rp2040-pinctrl_8h.html
-    //     pwms = <&pwm_ch1a_default>;
-    // };
 };
 
-#define VULPES_MAJORA_V1_BOARD_FLASH_SIZE_M 4
+#define VULPES_MAJORA_V1_FLASH_SIZE_M 4
 
 &flash0 {
     /* 8MB of flash minus the 0x100 used for
      * the second stage bootloader
      */
-    reg = <0x10000000 DT_SIZE_M(VULPES_MAJORA_V1_BOARD_FLASH_SIZE_M)>;
+    reg = <0x10000000 DT_SIZE_M(VULPES_MAJORA_V1_FLASH_SIZE_M)>;
 
     partitions {
         compatible = "fixed-partitions";
@@ -97,12 +93,12 @@
         #size-cells = <1>;
 
         /*
-         * Start at the beginning of usable flash, VULPES_MAJORA_V1_BOARD_FLASH_SIZE_M MB minus the
+         * Start at the beginning of usable flash, VULPES_MAJORA_V1_FLASH_SIZE_M MB minus the
          * second stage space and the 16 KiB reserved for settings
          */
         code_partition: partition@100 {
             label = "code";
-            reg = <0x100 (DT_SIZE_M(VULPES_MAJORA_V1_BOARD_FLASH_SIZE_M) - 0x100)>;
+            reg = <0x100 (DT_SIZE_M(VULPES_MAJORA_V1_FLASH_SIZE_M) - 0x100)>;
             read-only;
         };
     };
@@ -168,7 +164,8 @@
     status = "okay";
 };
 
-zephyr_udc0: &usbd {
+// for logging, if needed
+&usbd {
     status = "okay";
     cdc_acm_uart: cdc_acm_uart {
         compatible = "zephyr,cdc-acm-uart";
