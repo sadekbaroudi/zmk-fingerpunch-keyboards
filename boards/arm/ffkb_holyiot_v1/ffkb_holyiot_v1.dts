@@ -9,7 +9,7 @@
 #include <nordic/nrf52840_qiaa.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <dt-bindings/led/led.h>
-#include "ffkb_holyiot_v1_board-pinctl.dtsi"
+#include "ffkb_holyiot_v1-pinctl.dtsi"
 
 / {
     chosen {
@@ -19,6 +19,9 @@
         zmk,kscan = &kscan0;
         zmk,matrix_transform = &default_transform;
         zmk,battery = &vbatt;
+        zmk,underglow = &led_strip;
+        // for logging, if needed
+        zephyr,console = &cdc_acm_uart;
     };
 
     leds {
@@ -124,8 +127,12 @@
     status = "okay";
 };
 
+// for logging, if needed
 &usbd {
     status = "okay";
+    cdc_acm_uart: cdc_acm_uart {
+        compatible = "zephyr,cdc-acm-uart";
+    };
 };
 
 
@@ -177,11 +184,5 @@
         spi-zero-frame = <0x40>;
 
         color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
-    };
-};
-
-/ {
-    chosen {
-        zmk,underglow = &led_strip;
     };
 };

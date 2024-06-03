@@ -29,12 +29,12 @@ CONFIG_FLASH_PAGE_LAYOUT=y
 CONFIG_FLASH_MAP=y
 
 # Enable Encoders
-CONFIG_EC11=n
-CONFIG_EC11_TRIGGER_GLOBAL_THREAD=n
+CONFIG_EC11=y
+CONFIG_EC11_TRIGGER_GLOBAL_THREAD=y
 
 # Enable underglow
-CONFIG_ZMK_RGB_UNDERGLOW=n
-CONFIG_WS2812_STRIP=n
+CONFIG_ZMK_RGB_UNDERGLOW=y
+CONFIG_WS2812_STRIP=y
 
 # Allow toggling underglow without toggling external power
 CONFIG_ZMK_RGB_UNDERGLOW_EXT_POWER=n
@@ -42,7 +42,18 @@ CONFIG_ZMK_RGB_UNDERGLOW_EXT_POWER=n
 CONFIG_BUILD_OUTPUT_UF2=y
 
 # Increase BLE power level
-CONFIG_BT_CTLR_TX_PWR_PLUS_8=y
+CONFIG_BT_CTLR_TX_PWR_PLUS_8=n
 
 # Explicitly enable USB
 CONFIG_ZMK_USB=y
+
+# for logging, if needed ( https://zmk.dev/docs/development/usb-logging )
+# uncomment for logging with delayed startup
+# CONFIG_ZMK_USB_LOGGING=y
+# CONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=8000
+# CONFIG_LOG_BUFFER_SIZE=16384
+
+# This fixes an issue with some of my machines not being able to connect to ZMK
+# https://discord.com/channels/719497620560543766/1196958410147639386/1203582993864720394
+# Note to self: add to all my personal keyboard configs :)
+# CONFIG_ZMK_BLE_EXPERIMENTAL_FEATURES=y
