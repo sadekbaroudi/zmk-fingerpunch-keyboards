@@ -1,0 +1,18 @@
+/*
+ * Copyright (c) 2024, Sadek Baroudi
+ * SPDX-License-Identifier: MIT
+ */
+
+&kscan0 {
+    row-gpios
+        = <&gpio0 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 0
+        , <&gpio0 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 1
+        , <&gpio0 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 2
+        , <&gpio0 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 3
+        , <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 4
+        , <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 5
+        , <&gpio0 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 6
+        , <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 7
+        , <&gpio0 7  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 8
+        ;
+};

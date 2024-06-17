@@ -1,0 +1,6 @@
+# Copyright (c) 2024, Sadek Baroudi
+# SPDX-License-Identifier: MIT
+
+config BOARD_PINKIES_OUT_V3
+    bool "pinkies_out_v3"
+    depends on SOC_RP2040

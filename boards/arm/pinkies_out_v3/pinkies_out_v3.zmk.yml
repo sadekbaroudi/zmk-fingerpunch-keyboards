@@ -1,0 +1,12 @@
+file_format: "1"
+id: pinkies_out_v3
+name: pinkies_out_v3
+type: board
+arch: arm
+features:
+  - keys
+  - underglow
+outputs:
+  - usb
+url: https://fingerpunch.xyz/product/pinkies-out-v3/
+exposes: [sadekbaroudi_vik]

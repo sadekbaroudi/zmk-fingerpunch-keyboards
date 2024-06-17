@@ -1,0 +1,2 @@
+#include "3_1_0/pinkies_out_v3.dtsi"
+#include "3_1_0/vik_connector.dtsi"
