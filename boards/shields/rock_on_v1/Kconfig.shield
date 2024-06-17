@@ -1,5 +1,5 @@
 # Copyright (c) 2021 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-config SHIELD_ROCKON_V1
-    def_bool $(shields_list_contains,rockon_v1)
+config SHIELD_ROCK_ON_V1
+    def_bool $(shields_list_contains,rock_on_v1)

@@ -107,9 +107,9 @@ include:
   - board: vikoto
     shield: helmet_head vik_pmw3610
   - board: nice_nano_v2
-    shield: pinkiesout_v1
+    shield: pinkies_out_v1
   - board: nice_nano_v2
-    shield: rockon_v1
+    shield: rock_on_v1
   - board: nice_nano_v2
     shield: swweeep_left nice_view_adapter nice_view
   - board: nice_nano_v2

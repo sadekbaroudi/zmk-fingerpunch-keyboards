@@ -1,9 +1,9 @@
 # Copyright (c) 2021 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_ROCKON_V1
+if SHIELD_ROCK_ON_V1
 
 config ZMK_KEYBOARD_NAME
-    default "rockon v1"
+    default "rock on v1"
 
 endif
