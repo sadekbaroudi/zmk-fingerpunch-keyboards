@@ -111,7 +111,7 @@
 
 &spi0 {
     status = "okay";
-    cs-gpios = <&gpio0 5 GPIO_ACTIVE_LOW>;
+    cs-gpios = <&gpio0 21 GPIO_ACTIVE_LOW>;
     pinctrl-0 = <&spi0_default>;
     pinctrl-names = "default";
     clock-frequency = <DT_FREQ_M(2)>;
