@@ -18,15 +18,15 @@ include:
   - board: xivik@0.1.0
     shield: arachnophobe vik_cirque_i2c
   - board: xivik@0.1.0
-    shield: arachnophobe vik_spi_adapter vik_cirque_spi
+    shield: arachnophobe vik_cirque_spi
   - board: xivik@0.2.0
     shield: arachnophobe vik_cirque_i2c
   - board: xivik@0.2.0
-    shield: arachnophobe vik_spi_adapter vik_cirque_spi
+    shield: arachnophobe vik_cirque_spi
   - board: xivik@0.3.0
     shield: arachnophobe vik_cirque_i2c
   - board: xivik@0.3.0
-    shield: arachnophobe vik_spi_adapter vik_cirque_spi
+    shield: arachnophobe vik_cirque_spi
   # - board: nice_nano_v2
   #   shield: barobord
   # - board: nice_nano_v2
@@ -38,13 +38,13 @@ include:
   - board: vikoto
     shield: ffkb_v1 vik_cirque_i2c
   - board: vikoto
-    shield: ffkb_v1 vik_spi_adapter vik_cirque_spi
+    shield: ffkb_v1 vik_cirque_spi
   - board: vikoto
     shield: ffkb_v1 vik_pmw3610
   - board: svlinky@0.2.0
     shield: ffkb_v1 vik_cirque_i2c
   - board: svlinky@0.2.0
-    shield: ffkb_v1 vik_spi_adapter vik_cirque_spi
+    shield: ffkb_v1 vik_cirque_spi
   - board: nice_nano_v2
     shield: ffkb_v2
   - board: vikoto
@@ -52,13 +52,13 @@ include:
   - board: vikoto
     shield: ffkb_v2 vik_cirque_i2c
   - board: vikoto
-    shield: ffkb_v2 vik_spi_adapter vik_cirque_spi
+    shield: ffkb_v2 vik_cirque_spi
   - board: vikoto
     shield: ffkb_v2 vik_pmw3610
   - board: svlinky@0.2.0
     shield: ffkb_v2 vik_cirque_i2c
   - board: svlinky@0.2.0
-    shield: ffkb_v2 vik_spi_adapter vik_cirque_spi
+    shield: ffkb_v2 vik_cirque_spi
   - board: nice_nano_v2
     shield: ffkb_v3
   - board: vikoto
@@ -66,13 +66,13 @@ include:
   - board: vikoto
     shield: ffkb_v3 vik_cirque_i2c
   - board: vikoto
-    shield: ffkb_v3 vik_spi_adapter vik_cirque_spi
+    shield: ffkb_v3 vik_cirque_spi
   - board: vikoto
     shield: ffkb_v3 vik_pmw3610
   - board: svlinky@0.2.0
     shield: ffkb_v3 vik_cirque_i2c
   - board: svlinky@0.2.0
-    shield: ffkb_v3 vik_spi_adapter vik_cirque_spi
+    shield: ffkb_v3 vik_cirque_spi
   # - board: nice_nano_v2
   #   shield: swweeep_left nice_view_adapter  nice_view
   # - board: nice_nano_v2
@@ -85,17 +85,17 @@ include:
   - board: vikoto
     shield: ffkb_lite_v1 vik_cirque_i2c
   - board: vikoto
-    shield: ffkb_lite_v1 vik_spi_adapter vik_cirque_spi
+    shield: ffkb_lite_v1 vik_cirque_spi
   - board: vikoto
     shield: ffkb_lite_v1 vik_pmw3610
   - board: svlinky@0.1.0
     shield: ffkb_lite_v1 vik_cirque_i2c
   - board: svlinky@0.1.0
-    shield: ffkb_lite_v1 vik_spi_adapter vik_cirque_spi
+    shield: ffkb_lite_v1 vik_cirque_spi
   - board: svlinky@0.2.0
     shield: ffkb_lite_v1 vik_cirque_i2c
   - board: svlinky@0.2.0
-    shield: ffkb_lite_v1 vik_spi_adapter vik_cirque_spi
+    shield: ffkb_lite_v1 vik_cirque_spi
 #     cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
 #     artifact-name: ffkb_lite_v1_with_logging
   - board: vikoto
@@ -115,24 +115,24 @@ include:
   - board: nice_nano_v2
     shield: swweeep_right nice_view_adapter nice_view
   - board: vulpes_majora_v1
-    shield: vik_spi_adapter vik_pmw3360_per56
+    shield: vik_pmw3360_per56
   - board: nice_nano_v2
     shield: vulpes_minora_left
   - board: nice_nano_v2
     shield: vulpes_minora_right
   - board: nice_nano_v2
-    shield: vulpes_minora_right vik_spi_adapter vik_cirque_spi
+    shield: vulpes_minora_right vik_cirque_spi
   - board: nice_nano_v2
     shield: vulpes_minora_right vik_pmw3610
   - board: xivik@0.2.0
-    shield: vik_spi_adapter vik_vikropad
+    shield: vik_vikropad
   - board: xivik@0.3.0
-    shield: vik_spi_adapter vik_vikropad
+    shield: vik_vikropad
   - board: svlinky@0.1.0
-    shield: vik_spi_adapter vik_vikropad
+    shield: vik_vikropad
   - board: svlinky@0.2.0
-    shield: vik_spi_adapter vik_vikropad
+    shield: vik_vikropad
   - board: vikoto
-    shield: vik_spi_adapter vik_vikropad
+    shield: vik_vikropad
   - board: nice_nano_v2
     shield: settings_reset
