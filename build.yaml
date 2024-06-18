@@ -107,7 +107,7 @@ include:
   - board: pinkies_out_v3@3.0.0
     shield: vik_cirque_i2c
   - board: pinkies_out_v3@3.1.0
-    shield: vik_cirque_i2c
+    shield: vik_cirque_spi
   - board: nice_nano_v2
     shield: rock_on_v1
   - board: nice_nano_v2
