@@ -110,8 +110,8 @@
 };
 
 // Need to define this as 1, since we have an existing SPI device on this board
-// Starting point is normally 0, so we need to tell the vik_spi_adapter to start at 1 since
-// there is already a 0 on this board for the same bus
+// Starting point is normally 0, so we need to tell the vik shield to start at 1 since
+// there is already a 0 on this board for the same SPI bus
 #define VIK_SPI_REG_START 1
 // Need to specify the cs-gpios for this bus, as the same bus is used for VIK, so any SPI
 // VIK modules will need to know the existing CS gpios so it can append to them
