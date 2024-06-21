@@ -29,6 +29,7 @@
     kscan0: kscan_0 {        
         compatible = "zmk,kscan-gpio-direct";
         wakeup-source;
+
         input-gpios
             = <&pro_micro 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&pro_micro 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
@@ -49,7 +50,5 @@
             , <&pro_micro 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&pro_micro 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
         ;
-
-
     };
 };
