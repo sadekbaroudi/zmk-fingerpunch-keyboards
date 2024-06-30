@@ -1,0 +1,8 @@
+# Copyright (c) 2024 Sadek Baroudi
+# SPDX-License-Identifier: MIT
+
+config SHIELD_BYKEEB_LEFT
+    def_bool $(shields_list_contains,bykeeb_left)
+
+config SHIELD_BYKEEB_RIGHT
+    def_bool $(shields_list_contains,bykeeb_right)

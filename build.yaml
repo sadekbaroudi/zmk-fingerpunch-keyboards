@@ -29,6 +29,8 @@ include:
     shield: arachnophobe vik_cirque_spi
   # - board: nice_nano_v2
   #   shield: barobord
+  - board: seeeduino_xiao_ble
+    shield: bykeeb
   # - board: nice_nano_v2
   #   shield: duet_sxmy
   - board: nice_nano_v2

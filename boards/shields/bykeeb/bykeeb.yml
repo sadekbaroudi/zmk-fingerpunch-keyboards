@@ -1,0 +1,8 @@
+file_format: "1"
+id: bykeeb
+name: bykeeb
+type: shield
+url: https://github.com/sadekbaroudi/bykeeb
+requires: [seeed_xiao]
+features:
+  - keys
