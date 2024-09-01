@@ -1,0 +1,114 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/outputs.h>
+
+#define DEFAULT 0
+#define GAME    1
+#define KICAD   2
+#define FUSION  3
+#define FUNC    4
+
+// +-------+-------+-------+-------+-------+-------+-------+
+// |       |       |       |       |       |       |       |
+// +-------+-------+-------+-------+-------+-------+-------+
+// |       |       |       |       |       |       |       |
+// +-------+-------+-------+-------+-------+-------+-------+
+// |       |       |       |       |       |       |       |
+// +-------+-------+-------+-------+-------+-------+-------+           +-------+
+// |       |       |       |       |       |       |                   |       |
+// +-------+-------+-------+-------+-------+-------+-------+   +-------+-------+-------+
+// |       |       |       |       |       |       |       |   |       |       |       |    <--- 5 way nav
+// +-------+-------+-------+       +-------+-------+-------+   +-------+-------+-------+
+//                                                                     |       |
+//                                                                     +-------+
+//                                 +-------+-------+-------+
+//                                 |       |       |       |   <--- 3 way thumb
+//                                 +-------+-------+-------+
+
+//    ----.
+//         '..
+//            '
+//        +-------+
+//        |       |
+//        |       |    <---- foot pedal via TRRS
+//        |       |
+//        +-------+
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                &kp F4     &kp F1     &kp F2     &kp C      &kp V      &kp G      &kp N
+                &kp Z      &kp Q      &kp W      &kp E      &kp R      &kp D      &kp Y
+                &kp P      &kp A      &kp F      &kp TAB    &kp L      &kp H      &kp F7
+                &kp LSHFT  &kp T      &kp COMMA  &kp K      &kp SEMI   &kp DOT                            &kp UP
+                &kp J      &kp ESC    &mo FUNC              &kp LCTRL  &kp LALT   &kp X        &kp LEFT   &kp C_PLAY   &kp RIGHT
+                                                                                                          &kp DOWN
+                                                        &to FUNC     &to DEFAULT    &to GAME
+                &kp LSHFT
+            >;
+        };
+        
+        game_layer {
+            bindings = <
+                &kp ESC    &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp N6
+                &kp TAB    &kp Q      &kp W      &kp E      &kp R      &kp T      &kp LBRC
+                &kp CAPS   &kp A      &kp S      &kp D      &kp F      &kp G      &kp LBKT
+                &kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B                              &kp C_VOL_UP
+                &kp LCTRL  &kp LGUI   &kp LALT              &kp DEL    &kp ENTER  &kp SPC      &kp C_PREV &kp C_PLAY   &kp C_NEXT
+                                                                                                          &kp C_VOL_DN
+                                                        &to DEFAULT    &to DEFAULT    &to KICAD
+                &kp LSHFT
+            >;
+        };
+
+        kicad_layer {
+            bindings = <
+                &kp ESC    &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp N6
+                &kp TAB    &kp Q      &kp W      &kp E      &kp R      &kp T      &kp LBRC
+                &kp CAPS   &kp A      &kp S      &kp D      &kp F      &kp G      &kp LBKT
+                &kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B                              &kp C_VOL_UP
+                &kp LCTRL  &kp LGUI   &kp LALT              &kp DEL    &kp ENTER  &kp SPC      &kp C_PREV &kp C_PLAY   &kp C_NEXT
+                                                                                                          &kp C_VOL_DN
+                                                        &to GAME     &to DEFAULT    &to FUSION
+                &kp LSHFT
+            >;
+        };
+
+        fusion_layer {
+            bindings = <
+                &kp ESC    &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp N6
+                &kp TAB    &kp Q      &kp W      &kp E      &kp R      &kp T      &kp LBRC
+                &kp CAPS   &kp A      &kp S      &kp D      &kp F      &kp G      &kp LBKT
+                &kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B                              &kp C_VOL_UP
+                &kp LCTRL  &kp LGUI   &kp LALT              &kp DEL    &kp ENTER  &kp SPC      &kp C_PREV &kp C_PLAY   &kp C_NEXT
+                                                                                                          &kp C_VOL_DN
+                                                        &to KICAD    &to DEFAULT    &to FUNC
+                &kp LSHFT
+            >;
+        };
+
+        func_layer {
+            bindings = <
+                &kp ESC            &kp N1            &kp N2             &kp N3         &kp N4          &kp N5      &kp N6
+                &trans             &bt BT_PRV        &bt BT_NXT         &trans         &trans          &trans      &kp LBRC
+                &bt BT_CLR         &bt BT_SEL 0      &bt BT_SEL 1       &bt BT_SEL 2   &bt BT_SEL 3    &trans      &kp LBKT
+                &ext_power EP_TOG  &ext_power EP_ON  &ext_power EP_OFF  &out OUT_USB   &out OUT_BLE    &trans                               &kp C_VOL_UP
+                &kp LCTRL          &kp LGUI          &kp LALT           &kp DEL        &kp ENTER       &kp SPC                   &kp C_PREV &kp C_PLAY   &kp C_NEXT
+                                                                                                                                            &kp C_VOL_DN
+                                                                                      &to FUSION    &to DEFAULT    &to DEFAULT
+                &kp LSHFT
+            >;
+        };
+    };
+};

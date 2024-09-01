@@ -1,0 +1,8 @@
+file_format: "1"
+id: kucheza_byomcu
+name: kucheza_byomcu
+type: shield
+url: https://github.com/sadekbaroudi/kucheza/
+requires: [pro_micro]
+features:
+  - keys
