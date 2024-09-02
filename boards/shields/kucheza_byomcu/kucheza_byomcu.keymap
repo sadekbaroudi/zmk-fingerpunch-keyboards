@@ -11,7 +11,7 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define DEFAULT 0
-#define GAME    1
+#define NUMPAD  1
 #define KICAD   2
 #define FUSION  3
 #define FUNC    4
@@ -54,19 +54,19 @@
                 &kp LSHFT  &kp T      &kp COMMA  &kp K      &kp SEMI   &kp DOT                            &kp UP
                 &kp J      &kp ESC    &mo FUNC              &kp LCTRL  &kp LALT   &kp X        &kp LEFT   &kp C_PLAY   &kp RIGHT
                                                                                                           &kp DOWN
-                                                        &to FUNC     &to DEFAULT    &to GAME
+                                                        &to FUNC     &to DEFAULT    &to NUMPAD
                 &kp LSHFT
             >;
         };
         
-        game_layer {
+        numpad_layer {
             bindings = <
-                &kp ESC    &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp N6
-                &kp TAB    &kp Q      &kp W      &kp E      &kp R      &kp T      &kp LBRC
-                &kp CAPS   &kp A      &kp S      &kp D      &kp F      &kp G      &kp LBKT
-                &kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B                              &kp C_VOL_UP
-                &kp LCTRL  &kp LGUI   &kp LALT              &kp DEL    &kp ENTER  &kp SPC      &kp C_PREV &kp C_PLAY   &kp C_NEXT
-                                                                                                          &kp C_VOL_DN
+                &trans     &trans     &trans     &trans     &trans     &trans     &trans
+                &trans     &kp ASTRK  &kp N7     &kp N8     &kp N9     &kp MINUS  &trans
+                &trans     &kp FSLH   &kp N4     &kp N5     &kp N6     &kp PLUS   &trans
+                &trans     &kp EQUAL  &kp N1     &kp N2     &kp N3     &kp N0                             &kp UP
+                &trans     &kp LGUI   &kp LALT              &kp DOT    &kp SPC    &kp ENTER    &kp LEFT   &kp C_PLAY   &kp RIGHT
+                                                                                                          &kp DOWN
                                                         &to DEFAULT    &to DEFAULT    &to KICAD
                 &kp LSHFT
             >;
@@ -80,7 +80,7 @@
                 &kp LSHFT  &kp Z      &kp X      &kp C      &kp V      &kp B                              &kp C_VOL_UP
                 &kp LCTRL  &kp LGUI   &kp LALT              &kp DEL    &kp ENTER  &kp SPC      &kp C_PREV &kp C_PLAY   &kp C_NEXT
                                                                                                           &kp C_VOL_DN
-                                                        &to GAME     &to DEFAULT    &to FUSION
+                                                        &to NUMPAD   &to DEFAULT    &to FUSION
                 &kp LSHFT
             >;
         };
@@ -100,7 +100,7 @@
 
         func_layer {
             bindings = <
-                &kp ESC            &kp N1            &kp N2             &kp N3         &kp N4          &kp N5      &kp N6
+                &bootloader        &kp N1            &kp N2             &kp N3         &kp N4          &kp N5      &kp N6
                 &trans             &bt BT_PRV        &bt BT_NXT         &trans         &trans          &trans      &kp LBRC
                 &bt BT_CLR         &bt BT_SEL 0      &bt BT_SEL 1       &bt BT_SEL 2   &bt BT_SEL 3    &trans      &kp LBKT
                 &ext_power EP_TOG  &ext_power EP_ON  &ext_power EP_OFF  &out OUT_USB   &out OUT_BLE    &trans                               &kp C_VOL_UP
