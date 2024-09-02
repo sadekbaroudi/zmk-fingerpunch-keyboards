@@ -21,16 +21,6 @@
 };
 
 ///////// VIK SPI and connector start
-// need to remove everything here after https://github.com/zmkfirmware/zmk/pull/2280 is merged
-&spi0 {
-    compatible = "nordic,nrf-spim";
-    pinctrl-0 = <&spi0_default>;
-    pinctrl-1 = <&spi0_sleep>;
-    pinctrl-names = "default", "sleep";
-    // We actually don't need this since zmk-fingerpunch-vik defines this as vik_conn 6
-    // cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
-};
-
 &spi2 {
     compatible = "nordic,nrf-spim";
     pinctrl-0 = <&spi2_vik_pmw3610_default>;
@@ -60,30 +50,12 @@
 
 // Note: vulpes minora uses pro micro pin compatible i2c and spi
 vik_i2c: &pro_micro_i2c {}; // i2c0
-vik_spi: &pro_micro_spi {}; // spi0 - will change to spi1 after https://github.com/zmkfirmware/zmk/pull/2280 is merged
+vik_spi: &pro_micro_spi {}; // spi1
 vik_spi_pmw3610: &spi2 {};
 ///////// VIK SPI and connector end
 
 &pinctrl {
     // VIK SPI pinctrl start
-    // can remove spi0_default and spi0_sleep after https://github.com/zmkfirmware/zmk/pull/2280 is merged
-    spi0_default: spi0_default {
-        group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 10)>,
-                <NRF_PSEL(SPIM_MISO, 1, 11)>;
-        };
-    };
-
-    spi0_sleep: spi0_sleep {
-        group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 10)>,
-                <NRF_PSEL(SPIM_MISO, 1, 11)>;
-            low-power-enable;
-        };
-    };
-
     spi2_vik_pmw3610_default: spi2_vik_pmw3610_default {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
