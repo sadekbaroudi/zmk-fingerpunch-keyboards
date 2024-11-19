@@ -1,0 +1,22 @@
+# Copyright (c) 2024 Pete Johanson
+# SPDX-License-Identifier: MIT
+
+if BOARD_TENBIT
+
+config BOARD
+	default "tenbit"
+
+config ZMK_KEYBOARD_NAME
+	default "tenbit"
+
+config SPI_STM32_INTERRUPT
+	default y
+	depends on SPI
+
+config BUILD_OUTPUT_UF2_USE_FLASH_BASE
+	default y
+
+config BUILD_OUTPUT_UF2_USE_FLASH_OFFSET
+	default y
+
+endif # BOARD_TENBIT

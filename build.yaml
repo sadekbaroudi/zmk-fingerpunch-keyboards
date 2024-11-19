@@ -13,6 +13,11 @@
 #
 ---
 include:
+  - board: tenbit
+  - board: tenbit
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: tenbit-studio
   - board: seeeduino_xiao_ble
     shield: arachnophobe
   - board: xivik@0.1.0
