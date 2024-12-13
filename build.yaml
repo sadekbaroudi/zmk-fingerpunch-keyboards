@@ -13,132 +13,132 @@
 #
 ---
 include:
-  - board: seeeduino_xiao_ble
-    shield: arachnophobe
-  - board: xivik@0.1.0
-    shield: arachnophobe vik_cirque_i2c
-  - board: xivik@0.1.0
-    shield: arachnophobe vik_cirque_spi
-  - board: xivik@0.2.0
-    shield: arachnophobe vik_cirque_i2c
-  - board: xivik@0.2.0
-    shield: arachnophobe vik_cirque_spi
-  - board: xivik@0.3.0
-    shield: arachnophobe vik_cirque_i2c
-  - board: xivik@0.3.0
-    shield: arachnophobe vik_cirque_spi
+  # - board: seeeduino_xiao_ble
+  #   shield: arachnophobe
+  # - board: xivik@0.1.0
+  #   shield: arachnophobe vik_cirque_i2c
+  # - board: xivik@0.1.0
+  #   shield: arachnophobe vik_cirque_spi
+  # - board: xivik@0.2.0
+  #   shield: arachnophobe vik_cirque_i2c
+  # - board: xivik@0.2.0
+  #   shield: arachnophobe vik_cirque_spi
+  # - board: xivik@0.3.0
+  #   shield: arachnophobe vik_cirque_i2c
+  # - board: xivik@0.3.0
+  #   shield: arachnophobe vik_cirque_spi
   # - board: nice_nano_v2
   #   shield: barobord
-  - board: seeeduino_xiao_ble
-    shield: bykeeb_left
-  - board: seeeduino_xiao_ble
-    shield: bykeeb_right
+  # - board: seeeduino_xiao_ble
+  #   shield: bykeeb_left
+  # - board: seeeduino_xiao_ble
+  #   shield: bykeeb_right
   # - board: nice_nano_v2
   #   shield: duet_sxmy
-  - board: nice_nano_v2
-    shield: ffkb_v1
-  - board: vikoto
-    shield: ffkb_v1
-  - board: vikoto
-    shield: ffkb_v1 vik_cirque_i2c
-  - board: vikoto
-    shield: ffkb_v1 vik_cirque_spi
-  - board: vikoto
-    shield: ffkb_v1 vik_pmw3610
-  - board: svlinky@0.2.0
-    shield: ffkb_v1 vik_cirque_i2c
-  - board: svlinky@0.2.0
-    shield: ffkb_v1 vik_cirque_spi
-  - board: nice_nano_v2
-    shield: ffkb_v2
-  - board: vikoto
-    shield: ffkb_v2
-  - board: vikoto
-    shield: ffkb_v2 vik_cirque_i2c
-  - board: vikoto
-    shield: ffkb_v2 vik_cirque_spi
-  - board: vikoto
-    shield: ffkb_v2 vik_pmw3610
-  - board: svlinky@0.2.0
-    shield: ffkb_v2 vik_cirque_i2c
-  - board: svlinky@0.2.0
-    shield: ffkb_v2 vik_cirque_spi
-  - board: nice_nano_v2
-    shield: ffkb_v3
-  - board: vikoto
-    shield: ffkb_v3
-  - board: vikoto
-    shield: ffkb_v3 vik_cirque_i2c
-  - board: vikoto
-    shield: ffkb_v3 vik_cirque_spi
-  - board: vikoto
-    shield: ffkb_v3 vik_pmw3610
-  - board: svlinky@0.2.0
-    shield: ffkb_v3 vik_cirque_i2c
-  - board: svlinky@0.2.0
-    shield: ffkb_v3 vik_cirque_spi
+  # - board: nice_nano_v2
+  #   shield: ffkb_v1
+  # - board: vikoto
+  #   shield: ffkb_v1
+  # - board: vikoto
+  #   shield: ffkb_v1 vik_cirque_i2c
+  # - board: vikoto
+  #   shield: ffkb_v1 vik_cirque_spi
+  # - board: vikoto
+  #   shield: ffkb_v1 vik_pmw3610
+  # - board: svlinky@0.2.0
+  #   shield: ffkb_v1 vik_cirque_i2c
+  # - board: svlinky@0.2.0
+  #   shield: ffkb_v1 vik_cirque_spi
+  # - board: nice_nano_v2
+  #   shield: ffkb_v2
+  # - board: vikoto
+  #   shield: ffkb_v2
+  # - board: vikoto
+  #   shield: ffkb_v2 vik_cirque_i2c
+  # - board: vikoto
+  #   shield: ffkb_v2 vik_cirque_spi
+  # - board: vikoto
+  #   shield: ffkb_v2 vik_pmw3610
+  # - board: svlinky@0.2.0
+  #   shield: ffkb_v2 vik_cirque_i2c
+  # - board: svlinky@0.2.0
+  #   shield: ffkb_v2 vik_cirque_spi
+  # - board: nice_nano_v2
+  #   shield: ffkb_v3
+  # - board: vikoto
+  #   shield: ffkb_v3
+  # - board: vikoto
+  #   shield: ffkb_v3 vik_cirque_i2c
+  # - board: vikoto
+  #   shield: ffkb_v3 vik_cirque_spi
+  # - board: vikoto
+  #   shield: ffkb_v3 vik_pmw3610
+  # - board: svlinky@0.2.0
+  #   shield: ffkb_v3 vik_cirque_i2c
+  # - board: svlinky@0.2.0
+  #   shield: ffkb_v3 vik_cirque_spi
   # - board: nice_nano_v2
   #   shield: swweeep_left nice_view_adapter  nice_view
   # - board: nice_nano_v2
   #   shield: swweeep_right nice_view_adapter nice_view
-  - board: ffkb_holyiot_v1
-  - board: nice_nano_v2
-    shield: ffkb_lite_v1
-  - board: vikoto
-    shield: ffkb_lite_v1
-  - board: vikoto
-    shield: ffkb_lite_v1 vik_cirque_i2c
-  - board: vikoto
-    shield: ffkb_lite_v1 vik_cirque_spi
-  - board: vikoto
-    shield: ffkb_lite_v1 vik_pmw3610
-  - board: svlinky@0.1.0
-    shield: ffkb_lite_v1 vik_cirque_i2c
-  - board: svlinky@0.1.0
-    shield: ffkb_lite_v1 vik_cirque_spi
-  - board: svlinky@0.2.0
-    shield: ffkb_lite_v1 vik_cirque_i2c
-  - board: svlinky@0.2.0
-    shield: ffkb_lite_v1 vik_cirque_spi
+  # - board: ffkb_holyiot_v1
+  # - board: nice_nano_v2
+  #   shield: ffkb_lite_v1
+  # - board: vikoto
+  #   shield: ffkb_lite_v1
+  # - board: vikoto
+  #   shield: ffkb_lite_v1 vik_cirque_i2c
+  # - board: vikoto
+  #   shield: ffkb_lite_v1 vik_cirque_spi
+  # - board: vikoto
+  #   shield: ffkb_lite_v1 vik_pmw3610
+  # - board: svlinky@0.1.0
+  #   shield: ffkb_lite_v1 vik_cirque_i2c
+  # - board: svlinky@0.1.0
+  #   shield: ffkb_lite_v1 vik_cirque_spi
+  # - board: svlinky@0.2.0
+  #   shield: ffkb_lite_v1 vik_cirque_i2c
+  # - board: svlinky@0.2.0
+  #   shield: ffkb_lite_v1 vik_cirque_spi
 #     cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
 #     artifact-name: ffkb_lite_v1_with_logging
-  - board: vikoto
-    shield: helmet_head vik_pmw3610
-  - board: nice_nano_v2
-    shield: kucheza_byomcu
-  - board: nice_nano_v2
-    shield: pinkies_out_v1
-  - board: nice_nano_v2
-    shield: pinkies_out_v2
-  - board: pinkies_out_v3@3.0.0
-    shield: vik_cirque_i2c
-  - board: pinkies_out_v3@3.1.0
-    shield: vik_cirque_spi
-  - board: nice_nano_v2
-    shield: rock_on_v1
+  # - board: vikoto
+  #   shield: helmet_head vik_pmw3610
+  # - board: nice_nano_v2
+  #   shield: kucheza_byomcu
+  # - board: nice_nano_v2
+  #   shield: pinkies_out_v1
+  # - board: nice_nano_v2
+  #   shield: pinkies_out_v2
+  # - board: pinkies_out_v3@3.0.0
+  #   shield: vik_cirque_i2c
+  # - board: pinkies_out_v3@3.1.0
+  #   shield: vik_cirque_spi
+  # - board: nice_nano_v2
+  #   shield: rock_on_v1
   - board: nice_nano_v2
     shield: swweeep_left nice_view_adapter nice_view
   - board: nice_nano_v2
     shield: swweeep_right nice_view_adapter nice_view
-  - board: vulpes_majora_v1
-    shield: vik_pmw3360_per56
-  - board: nice_nano_v2
-    shield: vulpes_minora_left
-  - board: nice_nano_v2
-    shield: vulpes_minora_right
-  - board: nice_nano_v2
-    shield: vulpes_minora_right vik_cirque_spi
-  - board: nice_nano_v2
-    shield: vulpes_minora_right vik_pmw3610
-  - board: xivik@0.2.0
-    shield: vik_vikropad
-  - board: xivik@0.3.0
-    shield: vik_vikropad
-  - board: svlinky@0.1.0
-    shield: vik_vikropad
-  - board: svlinky@0.2.0
-    shield: vik_vikropad
-  - board: vikoto
-    shield: vik_vikropad
-  - board: nice_nano_v2
-    shield: settings_reset
+  # - board: vulpes_majora_v1
+  #   shield: vik_pmw3360_per56
+  # - board: nice_nano_v2
+  #   shield: vulpes_minora_left
+  # - board: nice_nano_v2
+  #   shield: vulpes_minora_right
+  # - board: nice_nano_v2
+  #   shield: vulpes_minora_right vik_cirque_spi
+  # - board: nice_nano_v2
+  #   shield: vulpes_minora_right vik_pmw3610
+  # - board: xivik@0.2.0
+  #   shield: vik_vikropad
+  # - board: xivik@0.3.0
+  #   shield: vik_vikropad
+  # - board: svlinky@0.1.0
+  #   shield: vik_vikropad
+  # - board: svlinky@0.2.0
+  #   shield: vik_vikropad
+  # - board: vikoto
+  #   shield: vik_vikropad
+  # - board: nice_nano_v2
+  #   shield: settings_reset
