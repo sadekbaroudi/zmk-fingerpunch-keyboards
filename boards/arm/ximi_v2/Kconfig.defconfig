@@ -1,0 +1,12 @@
+# Copyright (c) 2024, Sadek Baroudi
+# SPDX-License-Identifier: MIT
+
+if BOARD_XIMI_V2
+
+config BOARD
+    default "ximi_v2"
+
+config RP2_FLASH_W25Q080
+    default y
+
+endif # BOARD_XIMI_V2

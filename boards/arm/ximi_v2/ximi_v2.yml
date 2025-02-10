@@ -1,0 +1,12 @@
+file_format: "1"
+id: ximi_v2
+name: ximi_v2
+type: board
+arch: arm
+features:
+  - keys
+  - underglow
+outputs:
+  - usb
+url: https://fingerpunch.xyz/product/ximi-v2/
+exposes: [sadekbaroudi_vik]

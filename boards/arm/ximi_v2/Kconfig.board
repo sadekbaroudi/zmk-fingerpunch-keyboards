@@ -1,0 +1,6 @@
+# Copyright (c) 2024, Sadek Baroudi
+# SPDX-License-Identifier: MIT
+
+config BOARD_XIMI_V2
+    bool "ximi_v2"
+    depends on SOC_RP2040

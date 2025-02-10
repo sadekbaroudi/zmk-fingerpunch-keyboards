@@ -1,0 +1,194 @@
+/*
+ * Copyright (c) 2024, Sadek Baroudi
+ * SPDX-License-Identifier: MIT
+ */
+
+/dts-v1/;
+
+#include <rpi_pico/rp2040.dtsi>
+#include "ximi_v2-pinctl.dtsi"
+#include "vik_connector.dtsi"
+#include <dt-bindings/zmk/matrix_transform.h>
+#include <dt-bindings/led/led.h>
+#include <freq.h>
+
+/ {
+    model = "ximi_v2";
+    compatible = "ximi_v2", "raspberrypi,rp2040";
+
+    chosen {
+        zephyr,sram = &sram0;
+        zephyr,flash = &flash0;
+        zephyr,console = &cdc_acm_uart;
+        zephyr,code-partition = &code_partition;
+        zmk,matrix_transform = &default_transform;
+        zmk,kscan = &kscan0;
+        zmk,underglow = &led_strip;
+        // for logging, if needed
+        zephyr,console = &cdc_acm_uart;
+    };
+
+    xtal_clk: xtal-clk {
+        compatible = "fixed-clock";
+        clock-frequency = <12000000>;
+        #clock-cells = <0>;
+    };
+
+    kscan0: kscan_0 {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+
+        col-gpios
+            = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // col 0
+            , <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // col 1
+            , <&gpio0 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // col 2
+            , <&gpio0 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // col 3
+            , <&gpio0 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // col 4
+            , <&gpio0 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // col 5
+            , <&gpio0 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // col 6
+            , <&gpio0 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // col 7
+            ;
+
+        row-gpios
+            = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 0
+            , <&gpio0 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // row 1
+            , <&gpio0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // row 2
+            , <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // row 3
+            ;
+    };
+
+    default_transform: keymap_transform_0 {
+        compatible = "zmk,matrix-transform";
+        columns = <16>;
+        rows = <4>;
+
+        map = <
+            RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5)           RC(0,13) RC(0,12) RC(0,11) RC(0,10) RC(0,9) RC(0,8)
+            RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5)           RC(1,13) RC(1,12) RC(1,11) RC(1,10) RC(1,9) RC(1,8)
+            RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)           RC(2,13) RC(2,12) RC(2,11) RC(2,10) RC(2,9) RC(2,8)
+                                    RC(0,6) RC(1,6) RC(2,6)           RC(2,14) RC(1,14) RC(0,14)
+                                    RC(0,7) RC(1,7) RC(2,7)           RC(2,15) RC(1,15) RC(0,15)
+        >;
+    };
+
+    /*
+    left_encoder: encoder_left {
+        compatible = "alps,ec11";
+        steps = <80>;
+        status = "disabled";
+    };
+
+    right_encoder: encoder_right {
+        compatible = "alps,ec11";
+        steps = <80>;
+        status = "disabled";
+    };
+
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder &right_encoder>;
+        triggers-per-rotation = <20>;
+    };
+    */
+};
+
+#define XIMI_V2_FLASH_SIZE_M 4
+
+&flash0 {
+    /* 8MB of flash minus the 0x100 used for
+     * the second stage bootloader
+     */
+    reg = <0x10000000 DT_SIZE_M(XIMI_V2_FLASH_SIZE_M)>;
+
+    partitions {
+        compatible = "fixed-partitions";
+        #address-cells = <1>;
+        #size-cells = <1>;
+
+        /*
+         * Start at the beginning of usable flash, XIMI_V2_FLASH_SIZE_M MB minus the
+         * second stage space and the 16 KiB reserved for settings
+         */
+        code_partition: partition@100 {
+            label = "code";
+            reg = <0x100 (DT_SIZE_M(XIMI_V2_FLASH_SIZE_M) - 0x100)>;
+            read-only;
+        };
+    };
+};
+
+// Need to define this as 1, since we have an existing SPI device on this board
+// Starting point is normally 0, so we need to tell the vik shield to start at 1 since
+// there is already a 0 on this board for the same SPI bus
+#define VIK_SPI_REG_START 1
+// Need to specify the cs-gpios for this bus, as the same bus is used for VIK, so any SPI
+// VIK modules will need to know the existing CS gpios so it can append to them
+#define VIK_SPI_CS_PREFIX <&gpio0 9 GPIO_ACTIVE_LOW>
+
+&spi0 {
+    status = "okay";
+    cs-gpios = VIK_SPI_CS_PREFIX;
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-names = "default";
+    clock-frequency = <DT_FREQ_M(2)>;
+
+    shift_reg: 595@0 {
+        compatible = "zmk,gpio-595";
+        status = "okay";
+        gpio-controller;
+        spi-max-frequency = <200000>;
+        reg = <0>;
+        #gpio-cells = <2>;
+        ngpios = <8>;
+    };
+};
+
+&spi1 {
+    status = "okay";
+    cs-gpios = <&gpio0 25 GPIO_ACTIVE_LOW>;
+    pinctrl-0 = <&spi1_default>;
+    pinctrl-names = "default";
+    clock-frequency = <DT_FREQ_M(2)>;
+
+    led_strip: ws2812@0 {
+        compatible = "worldsemi,ws2812-spi";
+
+        /* SPI */
+        reg = <0>; /* ignored, but necessary for SPI bindings */
+        spi-max-frequency = <4000000>;
+
+        /* WS2812 */
+        chain-length = <45>;
+        spi-one-frame = <0x70>;
+        spi-zero-frame = <0x40>;
+        color-mapping = <LED_COLOR_ID_GREEN
+                         LED_COLOR_ID_RED
+                         LED_COLOR_ID_BLUE>;
+    };
+};
+
+&i2c1 {
+    pinctrl-0 = <&i2c1_default>;
+    pinctrl-names = "default";
+    clock-frequency = <I2C_BITRATE_FAST>;
+};
+
+// // for audio buzzer
+// &pwm {
+//     status = "okay";
+//     pinctrl-0 = <&pwm_ch1a_default>;
+//     pinctrl-names = "default";
+//     divider-int-0 = <255>;
+// };
+
+&gpio0 {
+    status = "okay";
+};
+
+// for logging, if needed
+&usbd {
+    status = "okay";
+    cdc_acm_uart: cdc_acm_uart {
+        compatible = "zephyr,cdc-acm-uart";
+    };
+};

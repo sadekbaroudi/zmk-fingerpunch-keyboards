@@ -1,0 +1,53 @@
+# Copyright (c) 2024, Sadek Baroudi
+# SPDX-License-Identifier: MIT
+
+CONFIG_USB_DEVICE_MANUFACTURER="fingerpunch"
+CONFIG_ZMK_KEYBOARD_NAME="ximi v2"
+CONFIG_USB_DEVICE_PRODUCT="ximi v2"
+CONFIG_ZMK_HID_CONSUMER_REPORT_USAGES_FULL=y
+
+# for logging, if needed ( https://zmk.dev/docs/development/usb-logging )
+# uncomment for logging with delayed startup
+CONFIG_ZMK_USB_LOGGING=y
+CONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=8000
+CONFIG_LOG_BUFFER_SIZE=16384
+
+CONFIG_SOC_SERIES_RP2XXX=y
+CONFIG_SOC_RP2040=y
+CONFIG_BOARD_XIMI_V2=y
+
+CONFIG_SYS_CLOCK_HW_CYCLES_PER_SEC=125000000
+
+# Enable ZMK USB
+CONFIG_ZMK_USB=y
+
+# Enable GPIO
+CONFIG_GPIO=y
+
+# Enable reset driver
+CONFIG_RESET=y
+
+# Code partition needed to target the correct flash range
+CONFIG_USE_DT_CODE_PARTITION=y
+
+# Output UF2 by default, native bootloader supports it.
+CONFIG_BUILD_OUTPUT_UF2=y
+
+# for Shift Register and leds, if configured
+CONFIG_SPI=y
+
+# # For audio buzzer
+# CONFIG_PWM=y
+# # https://discord.com/channels/939959680611020840/1189280494001606657/1246715087549628417
+# CONFIG_PWM_INIT_PRIORITY=20
+
+# Enable Encoders
+CONFIG_EC11=n
+CONFIG_EC11_TRIGGER_GLOBAL_THREAD=n
+
+# Enable underglow
+CONFIG_ZMK_RGB_UNDERGLOW=y
+CONFIG_WS2812_STRIP=y
+
+# Allow toggling underglow without toggling external power
+CONFIG_ZMK_RGB_UNDERGLOW_EXT_POWER=n

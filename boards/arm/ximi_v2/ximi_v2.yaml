@@ -1,0 +1,14 @@
+identifier: ximi_v2
+name: ximi_v2
+type: mcu
+arch: arm
+flash: 8092
+ram: 264
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+supported:
+  - i2c
+  - spi
+  - serial
