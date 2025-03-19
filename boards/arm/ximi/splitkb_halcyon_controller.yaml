@@ -1,0 +1,14 @@
+identifier: splitkb_halcyon_controller
+name: splitkb.com halcyon controller
+type: mcu
+arch: arm
+flash: 16284
+ram: 256
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+supported:
+  - serial
+  - i2c
+  - spi

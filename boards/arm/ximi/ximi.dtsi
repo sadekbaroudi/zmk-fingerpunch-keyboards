@@ -1,0 +1,140 @@
+/*
+ * Copyright (c) 2025 Pete Johanson
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/dts-v1/;
+
+#include <rpi_pico/rp2040.dtsi>
+#include "ximi-pinctrl.dtsi"
+#include "vik_connector.dtsi"
+#include <freq.h>
+#include <dt-bindings/zmk/matrix_transform.h>
+#include "ximi-layouts.dtsi"
+
+&ximi_6col_layout {
+	kscan = <&kscan0>;
+	transform = <&default_transform>;
+};
+
+/ {
+	model = "Fingerpunch Ximi";
+	compatible = "fingerpunch,ximi", "raspberrypi,rp2040";
+
+	chosen {
+		zephyr,sram = &sram0;
+		zephyr,flash = &flash0;
+		zephyr,flash-controller = &ssi;
+		zephyr,console = &uart0;
+		zephyr,code-partition = &code_partition;
+	};
+
+	xtal_clk: xtal-clk {
+		compatible = "fixed-clock";
+		clock-frequency = <12000000>;
+		#clock-cells = <0>;
+	};
+
+	kscan0: kscan {
+		compatible = "zmk,kscan-gpio-matrix";
+		wakeup-source;
+		
+		diode-direction = "col2row";
+		col-gpios
+			= <&gpio0 10 (GPIO_ACTIVE_HIGH)>
+			, <&gpio0 11 (GPIO_ACTIVE_HIGH)>
+			, <&gpio0 6 (GPIO_ACTIVE_HIGH)>
+			, <&gpio0 12 (GPIO_ACTIVE_HIGH)>
+			, <&gpio0 13 (GPIO_ACTIVE_HIGH)>
+			, <&gpio0 14 (GPIO_ACTIVE_HIGH)>
+			, <&gpio0 15 (GPIO_ACTIVE_HIGH)>
+			, <&gpio0 16 (GPIO_ACTIVE_HIGH)>
+			;
+		row-gpios
+			= <&gpio0 28 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			, <&gpio0 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			, <&gpio0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			, <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+			;
+	};
+	
+	
+	default_transform: keymap_transform_0 {
+		compatible = "zmk,matrix-transform";
+		columns = <16>;
+		rows = <4>;
+		map = <
+			RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5)          RC(0,13) RC(0,12) RC(0,11) RC(0,10) RC(0,9) RC(0,8)
+			RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5)          RC(1,13) RC(1,12) RC(1,11) RC(1,10) RC(1,9) RC(1,8)
+			RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)          RC(2,13) RC(2,12) RC(2,11) RC(2,10) RC(2,9) RC(2,8)
+			                          RC(0,6) RC(1,6) RC(2,6)      RC(2,14) RC(1,14) RC(0,14)
+				RC(0,7) RC(1,7) RC(2,7)                                       RC(2,15) RC(1,15) RC(0,15)
+		>;
+	};
+};
+
+&flash0 {
+	/* 8MB of flash minus the 0x100 used for
+	 * the second stage bootloader
+	 */
+	reg = <0x10000000 DT_SIZE_M(4)>;
+
+	partitions {
+		compatible = "fixed-partitions";
+		#address-cells = <1>;
+		#size-cells = <1>;
+
+		/*
+		 * Start at the beginning of usable flash, 8MB minus the
+		 * second stage space and the 16 KiB reserved for settings
+		 */
+		code_partition: partition@100 {
+			label = "code";
+			reg = <0x100 (DT_SIZE_M(4) - 0x100 - DT_SIZE_K(512))>;
+			read-only;
+		};
+
+		storage_partition: partition@380000 {
+			reg = <0x380000 DT_SIZE_K(512)>;
+			read-only;
+		};
+	};
+
+	split_config {
+		compatible = "zmk,wired-split";
+		device = <&uart0>;
+	};
+};
+
+&uart0 {
+	current-speed = <921600>;
+	status = "okay";
+	pinctrl-0 = <&uart0_default>;
+	pinctrl-names = "default";
+};
+
+// For haptics eventually
+&i2c1 {
+	pinctrl-0 = <&i2c1_default>;
+	pinctrl-names = "default";
+	clock-frequency = <I2C_BITRATE_FAST>;
+};
+
+&spi0 {
+	status = "okay";
+	pinctrl-0 = <&spi0_default>;
+	pinctrl-names = "default";
+	clock-frequency = <DT_FREQ_M(2)>;
+
+	cs-gpios = <&gpio0 21 GPIO_ACTIVE_LOW>;
+};
+
+&gpio0 {
+	status = "okay";
+};
+
+zephyr_udc0: &usbd {
+	status = "okay";
+};
+

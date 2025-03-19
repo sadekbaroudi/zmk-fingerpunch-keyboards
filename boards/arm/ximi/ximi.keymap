@@ -1,0 +1,178 @@
+/*
+ * Copyright (c) 2023 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+// #include <dt-bindings/petejohanson/behaviors/breakout.h>
+
+#define NAV_L 1
+#define NUM_L 2
+#define MED_L 3
+
+/* Uncomment this block if using RGB
+&led_strip {
+    chain-length = <6>;
+    // chain-length = <31>; // Uncomment if using both per-key and underglow LEDs
+    // chain-length = <25>; // Uncomment if using only per-key LEDs.
+};
+ */
+
+/ {
+    tap_dances {
+       shifty: shift_caps_word {
+		compatible = "zmk,behavior-tap-dance";
+		display-name = "Shift/CapsWord";
+		#binding-cells = <0>;
+		tapping-term-ms = <150>;
+		bindings = <&kp LSHFT>, <&caps_word>;
+	};
+    };
+
+    behaviors {
+	    breakout: breakout_behavior {
+		    compatible = "petejohanson,behavior-breakout";
+		    #binding-cells = <1>;
+		};
+    };
+
+    cond_layers {
+        compatible = "zmk,conditional-layers";
+	tri {
+	    if-layers = <NUM_L NAV_L>;
+	    then-layer = <MED_L>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+	lgui_combo {
+	    timeout-ms = <50>;
+            key-positions = <16 19>;
+            bindings = <&kp LGUI>;
+	    layers = <MED_L>;
+	};
+
+	l_curly_bracket {
+	    timeout-ms = <50>;
+            key-positions = <2 14>;
+            bindings = <&kp LS(LBKT)>;
+	    layers = <NUM_L>;
+	};
+
+	r_curly_bracket {
+	    timeout-ms = <50>;
+            key-positions = <4 16>;
+            bindings = <&kp LS(RBKT)>;
+	    layers = <NUM_L>;
+	};
+	lbracket {
+	    timeout-ms = <50>;
+            key-positions = <14 26>;
+            bindings = <&kp LBKT>;
+	    layers = <NUM_L>;
+	};
+
+	rbracket {
+	    timeout-ms = <50>;
+            key-positions = <16 28>;
+            bindings = <&kp RBKT>;
+	    layers = <NUM_L>;
+	};
+
+	ques_mark_combo {
+	    timeout-ms = <50>;
+            key-positions = <21 37>;
+            bindings = <&kp LS(FSLH)>;
+	};
+
+	bslash_combo {
+	    timeout-ms = <50>;
+            key-positions = <10 22>;
+            bindings = <&kp BSLH>;
+	};
+
+	fslash_combo {
+	    timeout-ms = <50>;
+            key-positions = <22 38>;
+            bindings = <&kp FSLH>;
+	};
+    };
+
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+            &kp ESC   &kp Q &kp W &kp F &kp P &kp B                                                 &kp J &kp L  &kp U     &kp Y   &kp QUOT &none
+            &kp TAB   &kp A &kp R &kp S &kp T &kp G                                                 &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
+            &kp LSHFT &kp Z &kp X &kp C &kp D &kp V                                                      &kp K &kp H  &kp COMMA &kp DOT &kp SEMI &kp RCTRL
+                                                 &mo NAV_L &shifty &kp ESC    &kp RET &kp SPACE &mo NUM_L
+				&none &none &none                                                 &none &none &none
+            >;
+
+            // sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        nav_layer {
+            label = "Nav";
+            bindings = <
+            &trans &trans    &trans   &trans    &trans   &trans                                   &kp GRAVE &kp TAB  &kp GRAVE &kp BKSP   &kp DEL  &trans
+            &trans &sk LSHFT &sk LALT &sk LCTRL &sk LGUI &trans                                   &kp TAB   &kp LARW &kp DARW  &kp UARW   &kp RARW &trans
+            &trans &trans    &trans   &trans    &trans   &trans                                   &trans    &kp HOME &kp PG_DN &kp PG_UP  &kp END  &trans
+                                                         &trans &trans &trans      &trans &kp RET &trans
+				&trans &trans &trans                                                 &trans &trans &trans
+            >;
+        };
+
+        num_layer {
+            label = "Num";
+            bindings = <
+            &trans &kp ESC   &kp N7 &kp N8 &kp N9 &kp RBKT                                  &trans &trans   &trans    &trans   &trans    &trans
+            &trans &kp MINUS &kp N4 &kp N5 &kp N6 &kp EQUAL                                 &trans &sk LGUI &sk LCTRL &sk LALT &sk LSHFT &trans
+            &trans &kp PLUS  &kp N1 &kp N2 &kp N3 &kp N0                                    &trans &trans   &trans    &trans   &trans    &trans
+                                                  &trans    &trans &trans     &trans &trans &trans
+				&trans &trans &trans                                                 &trans &trans &trans
+            >;
+        };
+
+        media_layer {
+            label = "Media";
+            bindings = <
+            &bootloader &trans &trans &trans &trans &trans                                  &trans &kp C_PREV &kp C_VOL_DN     &kp C_VOL_UP &kp C_NEXT &bootloader
+            &trans      &trans &trans &trans &trans &trans                                  &trans &trans     &trans           &trans       &trans     &trans
+            &trans      &trans &trans &trans &trans &trans                                  &trans &trans     &kp C_PLAY_PAUSE &kp C_MUTE   &trans     &trans
+                                                    &trans &trans &trans     &trans  &trans &trans
+				&trans &trans &trans                                                 &trans &trans &trans
+            >;
+        };
+
+	/*
+	res_layer1 { status = "reserved"; };
+	res_layer2 { status = "reserved"; };
+	res_layer3 { status = "reserved"; };
+	res_layer4 { status = "reserved"; };
+	*/
+#if 0
+        function_layer {
+            // ---------------------------------------------------------------------------------------------------------------------------------
+            // |       |      |BT_CLR|BTSEL0|BTSEL1|BTSEL2|                                         |      |      |      |      |      |      |
+            // |       |      |      |BTSEL3|BTSEL4|      |                                         |      |      |      |      |      |      |
+            // |       |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+            //                       |      |      |      |      |      |      |      |      |      |      |      |      |
+            bindings = <
+            &bootloader &trans &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2              &trans &trans &trans &trans &trans &bootloader
+            &trans &trans &trans     &bt BT_SEL 3 &bt BT_SEL 4 &trans                    &trans &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans &trans &trans &trans
+                                 &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
+            >;
+
+            // sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+#endif
+    };
+};

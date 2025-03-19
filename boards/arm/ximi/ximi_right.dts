@@ -1,0 +1,11 @@
+/*
+ * Copyright (c) 2021 Yonatan Schachter
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include "ximi.dtsi"
+
+&default_transform {
+	col-offset = <8>;
+};

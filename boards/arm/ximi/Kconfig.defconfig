@@ -1,0 +1,29 @@
+# Copyright (c) 2021 Pete Johanson
+# SPDX-License-Identifier: Apache-2.0
+
+if BOARD_XIMI_LEFT
+
+config BOARD
+	default "ximi_left"
+
+config RP2_FLASH_W25Q080
+	default y
+
+config ZMK_KEYBOARD_NAME
+	default "Ximi"
+
+endif # BOARD_XIMI_LEFT
+
+
+if BOARD_XIMI_RIGHT
+
+config BOARD
+	default "ximi_right"
+
+config RP2_FLASH_W25Q080
+	default y
+
+config ZMK_KEYBOARD_NAME
+	default "Ximi (Right)"
+
+endif # BOARD_XIMI_RIGHT
