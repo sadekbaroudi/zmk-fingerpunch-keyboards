@@ -142,5 +142,5 @@ include:
     shield: vik_vikropad
   - board: nice_nano_v2
     shield: settings_reset
-  - board: ximi_left
-  - board: ximi_right
+  - board: ximi_left@2.0.0
+  - board: ximi_right@2.0.0
