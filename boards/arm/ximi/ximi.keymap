@@ -90,7 +90,7 @@
      &mkp MCLK  &kp Q       &kp W       &kp F       &kp P         &kp B                                           &kp J          &kp L         &lt WINNAV U  &kp Y       &kp SEMI    &kp BSLH
      &mkp LCLK  &hm LCTL A  &hm LGUI R  &hm LALT S  &hs LSHIFT T  &kp G                                           &kp M          &hs RSHIFT N  &hm RALT E    &hm RGUI I  &hm RCTL O  &kp SQT
      &mkp RCLK  &kp Z       &kp X       &kp C       &kp D         &kp V                                           &kp K          &kp H         &kp COMMA     &kp DOT     &kp FSLH    &kp RET
-                &kp C_MUTE                          &kp DEL       &lt NAV RET  &lt FUNC TAB       &lt MEDIA BSPC  &lt SYM SPACE  &kp SQT
+                &kp C_MUTE                          &kp DEL       &lt NAV RET  &lt FUNC TAB       &lt MEDIA BSPC  &lt SYM SPACE  &kp SQT                                 &kp C_MUTE
                                                     &kp C_VOL_DN  &kp C_MUTE   &kp C_VOL_UP       &kp C_VOL_DN    &kp C_MUTE     &kp C_VOL_UP
              >;
          };
