@@ -4,13 +4,15 @@
 config BOARD_XIMI_LEFT
 	bool "Ximi Left"
 	depends on SOC_RP2040
-	imply RETAINED_MEM
-	imply RETENTION
-	imply RETENTION_BOOT_MODE
+# Include for double-tap bootloader, but need to switch to Pete's bootloader/retention-boot-mode-support branch
+#	imply RETAINED_MEM
+#	imply RETENTION
+#	imply RETENTION_BOOT_MODE
 
 config BOARD_XIMI_RIGHT
 	bool "Ximi Right"
 	depends on SOC_RP2040
-	imply RETAINED_MEM
-	imply RETENTION
-	imply RETENTION_BOOT_MODE
+# Include for double-tap bootloader, but need to switch to Pete's bootloader/retention-boot-mode-support branch
+#	imply RETAINED_MEM
+#	imply RETENTION
+#	imply RETENTION_BOOT_MODE

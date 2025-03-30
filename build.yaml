@@ -125,9 +125,13 @@ include:
   - board: nice_nano_v2
     shield: vulpes_minora_left
   - board: nice_nano_v2
+    shield: vulpes_minora_left vik_cirque_spi
+  - board: nice_nano_v2
+    shield: vulpes_minora_left vik_cirque_spi_split_central
+  - board: nice_nano_v2
     shield: vulpes_minora_right
   - board: nice_nano_v2
-    shield: vulpes_minora_right vik_cirque_spi
+    shield: vulpes_minora_right vik_cirque_spi_split_peripheral
   - board: nice_nano_v2
     shield: vulpes_minora_right vik_pmw3610
   - board: xivik@0.2.0
@@ -143,4 +147,8 @@ include:
   - board: nice_nano_v2
     shield: settings_reset
   - board: ximi_left@2.0.0
+    shield: vik_cirque_spi
+  - board: ximi_left@2.0.0
+    shield: vik_cirque_spi_split_central
   - board: ximi_right@2.0.0
+    shield: vik_cirque_spi_split_peripheral

@@ -5,6 +5,8 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <dt-bindings/zmk/input_transform.h>
+#include <dt-bindings/input/input-event-codes.h>
 
 / {
     chosen {
@@ -91,12 +93,9 @@
 };
 
 / {
-    glidepoint_input {
+    glidepoint_listener {
         compatible = "zmk,input-listener";
         device = <&glidepoint>;
-
-        xy-swap;
-        y-invert;
-        x-invert;
+        // input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
     };
 };

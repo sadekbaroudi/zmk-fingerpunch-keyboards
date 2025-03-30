@@ -73,18 +73,11 @@
 };
 
 / {
-    // Rotation config, from Pete
-    // This will change in the future
-    // https://discord.com/channels/719497620560543766/845285481888743434/1206407883777114182
-    input_config {
-        compatible = "zmk,input-listener";
-        device = <&glidepoint>;
-
-        xy-swap;
-        y-invert;
-        x-invert;
+    glidepoint_input {
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
     };
 };
+
 */
 
 // for logging, remove later
