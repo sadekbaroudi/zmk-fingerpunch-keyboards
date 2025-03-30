@@ -51,7 +51,7 @@ CONFIG_WS2812_STRIP=y
 
 # zmk mouse emulation for mouse keys in keymap
 # and optional trackball/trackpad configuration
-CONFIG_ZMK_MOUSE=y
+CONFIG_ZMK_POINTING=y
 
 # Allow toggling underglow without toggling external power
 CONFIG_ZMK_RGB_UNDERGLOW_EXT_POWER=n
