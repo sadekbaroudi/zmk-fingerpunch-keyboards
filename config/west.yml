@@ -11,8 +11,13 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.2.1
+      revision: main
       import: app/west.yml
+    # Had to switch off v0.2.1 to main because wired split wasn't working
+    # - name: zmk
+    #   remote: zmkfirmware
+    #   revision: v0.2.1
+    #   import: app/west.yml
     - name: chiptuner-zmk-module
       remote: petejohanson
       revision: main
