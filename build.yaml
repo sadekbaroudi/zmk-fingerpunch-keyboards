@@ -135,7 +135,7 @@ include:
   - board: nice_nano_v2
     shield: vulpes_minora_right vik_cirque_spi_split_peripheral
   - board: nice_nano_v2
-    shield: vulpes_minora_right vik_pmw3610
+    shield: vulpes_minora_left vik_pmw3610
   - board: xivik@0.2.0
     shield: vik_vikropad
   - board: xivik@0.3.0
