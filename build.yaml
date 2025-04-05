@@ -102,6 +102,8 @@ include:
     shield: ffkb_lite_v1 vik_cirque_spi
 #     cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
 #     artifact-name: ffkb_lite_v1_with_logging
+  - board: nice_nano_v2
+    shield: ffkb_we_v1
   - board: vikoto
     shield: helmet_head vik_pmw3610
   - board: nice_nano_v2

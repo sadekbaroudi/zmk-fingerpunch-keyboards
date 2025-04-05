@@ -1,0 +1,8 @@
+file_format: "1"
+id: ffkb_we_v1
+name: ffkb_we_v1
+type: shield
+url: https://github.com/sadekbaroudi/ffkb/
+requires: [pro_micro]
+features:
+  - keys
