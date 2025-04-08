@@ -66,14 +66,22 @@
         a-gpios = <&gpio0 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         b-gpios = <&gpio0 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         steps = <80>;
+        status = "disabled";
     };
 
-    // Right encoder
+	// Right encoder
     encoder_2: encoder_2 {
         compatible = "alps,ec11";
         a-gpios = <&gpio0 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         b-gpios = <&gpio0 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         steps = <80>;
+        status = "disabled";
+    };
+
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&encoder_1 &encoder_2>;
+        triggers-per-rotation = <20>;
     };
 
 	// // Need to initialize here in case vik cirque ends up being used
