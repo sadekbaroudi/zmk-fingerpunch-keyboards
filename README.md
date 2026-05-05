@@ -9,10 +9,10 @@ I created an example zmk-config with a readme that explains how to do this. See 
 
 # Local builds
 
-Please note that if you are building locally, the `config/west.yml` and `config/deps.yml` will not be automatically included. If you do this, you will need to include the necessary repositories. In addition to this, as of now, pointing devices has not been merged into zmk, so you'll need to checkout the appropriate branch. See the repo currently being used in `config/west.yml`. So in this case, you'd need to check out petejohanson's zmk repo, and switch to the `feat/pointers-move-scroll` branch if using pointing devices.
+Please note that if you are building locally, the `config/west.yml` and `config/deps.yml` will not be automatically included. If you do this, you will need to include the necessary repositories.
 
 Example local build string:  
-`west build --pristine -b "nice_nano_v2" -- -DSHIELD="vulpes_minora_left" -DZMK_EXTRA_MODULES='/home/sadek/git/zmk/zmk-fingerpunch-keyboards;/home/sadek/git/zmk/zmk-fingerpunch-controllers;/home/sadek/git/zmk/zmk-fingerpunch-vik;/home/sadek/git/zmk/cirque-input-module'`
+`west build --pristine -b "nice_nano" -- -DSHIELD="vulpes_minora_left" -DZMK_EXTRA_MODULES='/home/sadek/git/zmk/zmk-fingerpunch-keyboards;/home/sadek/git/zmk/zmk-fingerpunch-controllers;/home/sadek/git/zmk/zmk-fingerpunch-vik'`
 
 # fingerpunch controllers and VIK
 

@@ -6,12 +6,10 @@ manifest:
       url-base: https://github.com/petejohanson
     - name: sadekbaroudi
       url-base: https://github.com/sadekbaroudi
-    # Additional modules containing boards/shields/custom code can be listed here as well
-    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3
+      revision: main
       import: app/west.yml
     - name: chiptuner-zmk-module
       remote: petejohanson

@@ -1,0 +1,23 @@
+boards:
+  - name: ximi_left
+    vendor: fingerpunch
+    socs:
+      - name: rp2040
+    revision:
+      format: major.minor.patch
+      default: 2.0.0
+      exact: true
+      revisions:
+        - name: 1.0.0
+        - name: 2.0.0
+  - name: ximi_right
+    vendor: fingerpunch
+    socs:
+      - name: rp2040
+    revision:
+      format: major.minor.patch
+      default: 2.0.0
+      exact: true
+      revisions:
+        - name: 1.0.0
+        - name: 2.0.0

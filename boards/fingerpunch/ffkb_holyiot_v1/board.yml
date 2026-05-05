@@ -1,0 +1,5 @@
+board:
+  name: ffkb_holyiot_v1
+  vendor: fingerpunch
+  socs:
+    - name: nrf52840

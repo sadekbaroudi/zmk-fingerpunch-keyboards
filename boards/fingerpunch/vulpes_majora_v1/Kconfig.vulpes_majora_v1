@@ -1,0 +1,8 @@
+# Copyright (c) 2024, Sadek Baroudi
+# SPDX-License-Identifier: MIT
+
+config BOARD_VULPES_MAJORA_V1
+    select SOC_RP2040
+    imply RETAINED_MEM
+    imply RETENTION
+    imply RETENTION_BOOT_MODE
