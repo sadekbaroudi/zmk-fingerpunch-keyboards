@@ -12,7 +12,9 @@ I created an example zmk-config with a readme that explains how to do this. See 
 Please note that if you are building locally, the `config/west.yml` and `config/deps.yml` will not be automatically included. If you do this, you will need to include the necessary repositories.
 
 Example local build string:  
-`west build --pristine -b "nice_nano" -- -DSHIELD="vulpes_minora_left" -DZMK_EXTRA_MODULES='/home/sadek/git/zmk/zmk-fingerpunch-keyboards;/home/sadek/git/zmk/zmk-fingerpunch-controllers;/home/sadek/git/zmk/zmk-fingerpunch-vik'`
+`west build --pristine -b "nice_nano//zmk" -- -DSHIELD="vulpes_minora_left" -DZMK_EXTRA_MODULES='/home/sadek/git/zmk/zmk-fingerpunch-keyboards;/home/sadek/git/zmk/zmk-fingerpunch-controllers;/home/sadek/git/zmk/zmk-fingerpunch-vik'`
+
+Note: As of ZMK v0.4 (Zephyr 4.1, Hardware Model v2), some third-party board identifiers require a `//zmk` suffix (e.g. `nice_nano//zmk`). Fingerpunch controllers like `vikoto` do not use this suffix.
 
 # fingerpunch controllers and VIK
 
