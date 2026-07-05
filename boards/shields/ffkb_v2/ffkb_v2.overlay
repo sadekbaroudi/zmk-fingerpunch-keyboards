@@ -65,11 +65,10 @@
         reg = <0x2a>;
         status = "okay";
         // This is for my personal build, where I hand wired the DR pin on the cirque to the ffkb v2 led pin (P0.06)
-        dr-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH)>;
+        data-ready-gpios = <&gpio0 6 (GPIO_ACTIVE_HIGH)>;
 
         sensitivity = "4x";
-        sleep;
-        no-taps;
+        sleep-mode-enable;
     };
 };
 

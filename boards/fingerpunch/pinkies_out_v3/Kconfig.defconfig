@@ -1,0 +1,9 @@
+# Copyright (c) 2024, Sadek Baroudi
+# SPDX-License-Identifier: MIT
+
+if BOARD_PINKIES_OUT_V3
+
+config RP2_FLASH_W25Q080
+    default y
+
+endif # BOARD_PINKIES_OUT_V3

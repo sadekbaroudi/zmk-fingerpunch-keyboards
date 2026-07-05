@@ -1,0 +1,12 @@
+board:
+  name: pinkies_out_v3
+  vendor: fingerpunch
+  revision:
+    format: major.minor.patch
+    default: 3.1.0
+    exact: true
+    revisions:
+      - name: 3.0.0
+      - name: 3.1.0
+  socs:
+    - name: rp2040

@@ -68,11 +68,10 @@
         reg = <0>;
         spi-max-frequency = <1000000>;
         status = "okay";
-        dr-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH)>;
+        data-ready-gpios = <&pro_micro 1 (GPIO_ACTIVE_HIGH)>;
 
         sensitivity = "4x";
-        sleep;
-        no-taps;
+        sleep-mode-enable;
     };
 };
 

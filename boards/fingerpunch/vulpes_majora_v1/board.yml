@@ -1,0 +1,5 @@
+board:
+  name: vulpes_majora_v1
+  vendor: fingerpunch
+  socs:
+    - name: rp2040
