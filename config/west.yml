@@ -9,7 +9,8 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      # Pinned to a validated ZMK main commit (2026-07-04) until ZMK tags v0.4.
+      revision: 484a0547078228f6957ed164523823e39fbedec4
       import: app/west.yml
     - name: chiptuner-zmk-module
       remote: petejohanson
